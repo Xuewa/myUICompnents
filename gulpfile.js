@@ -28,6 +28,12 @@ gulp.task('styles', function() {
     .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('script', function() {
+  return gulp.src('src/js/**/*.js')
+    .pipe(gulp.dest('build/js'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
 
 gulp.task('views', function(){
   return gulp.src([
@@ -87,7 +93,7 @@ gulp.task('clean', function(cb) {
 });
 
 
-gulp.task('build', ['styles', 'views', 'images']);
+gulp.task('build', ['styles', 'views', 'images','script']);
 
 
 gulp.task('default', ['clean'], function() {
