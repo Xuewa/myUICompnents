@@ -1,12 +1,8 @@
 extends layout
 
 block content
-  h1 Hi!
-  main
-    div
-      h2 SVG image
-      img(src="images/github.svg", width="128")
-    hr
-    div
-      h2 PNG image
-      img(src="images/github.png", width="128")
+  div.weui-cell
+    div.weui-cell__hd
+      label.weui-label qq
+    div.weui-cell__bd
+      input.weui-input(type="number",pattern="[0-9]*" placeholder="请输入qq号")
