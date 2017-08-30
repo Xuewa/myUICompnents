@@ -7,7 +7,7 @@ var browserSync = require('browser-sync');
 var $ = require('gulp-load-plugins')();
 
 
-gulp.task('styles', function() {
+gulp.task('styles_less', function() {
   var browsers = [
     '> 1%',
     'last 2 versions',
@@ -24,6 +24,12 @@ gulp.task('styles', function() {
           browsers: browsers
         })
       ]))
+    .pipe(gulp.dest('build'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('styles_css', function() {
+  return gulp.src('src/**/*.css')
     .pipe(gulp.dest('build'))
     .pipe(browserSync.reload({stream: true}));
 });
@@ -70,9 +76,11 @@ gulp.task('browser-sync', function() {
 
 
 gulp.task('watch', ['build'], function() {
-  gulp.watch('src/**/*.less', ['styles']);
+  gulp.watch('src/**/*.css', ['styles_css']);
+  gulp.watch('src/**/*.less', ['styles_less']);
   gulp.watch('src/images/**/*', ['images']);
   gulp.watch('src/**/*.jade', ['views']);
+  gulp.watch('src/**/*.js', ['script']);
 
   gulp.start('browser-sync');
 });
@@ -93,7 +101,7 @@ gulp.task('clean', function(cb) {
 });
 
 
-gulp.task('build', ['styles', 'views', 'images','script']);
+gulp.task('build', ['styles_less','styles_css','views', 'images','script']);
 
 
 gulp.task('default', ['clean'], function() {

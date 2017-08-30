@@ -1,11 +1,16 @@
 doctype html
-html(lang="en")
+html(lang='en')
   head
-    title Yo! Gulp Less Jade
+    meta(charset='utf-8')
+    meta(name='viewport',content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no')
+    title 主页面
+    link(rel='stylesheet', href='styles/weui.css')
+    link(rel='stylesheet', href='styles/jquery-weui.css')
     link(rel='stylesheet', href='styles/main.css')
   body
     block content
+    script(type='text/javascript' src='js/libs/fastclick.js')
     script(type='text/javascript' src='js/libs/jquery-2.1.4.js')
     script(type='text/javascript' src='js/libs/jquery-weui.min.js')
-    script(type='text/javascript' src='js/libs/fastclick.js')
+    script(type='text/javascript' src='js/my.js')
 

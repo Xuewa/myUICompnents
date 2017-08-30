@@ -447,8 +447,315 @@ template {
 }
 
 body {
-  background-color: azure;
-}
-h1 {
+  background-color: #f5f5f8;
+  font-size: 16px;
   color: #51c75b;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+input {
+  line-height: 1;
+}
+::-webkit-input-placeholder,
+.xblock-row-placeholder {
+  /* WebKit browsers */
+  color: #D2DBE2;
+  font-size: 15px;
+  font-family: 'PingFangSC-Regular,微软雅黑';
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #D2DBE2;
+  font-size: 15px;
+  font-family: 'PingFangSC-Regular,微软雅黑';
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #D2DBE2;
+  font-size: 15px;
+  font-family: 'PingFangSC-Regular,微软雅黑';
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #D2DBE2;
+  font-size: 15px;
+  font-family: 'PingFangSC-Regular,微软雅黑';
+}
+[class^="weui-icon-"]:before,
+[class*=" weui-icon-"]:before {
+  margin-left: 0;
+  margin-right: 0;
+}
+.weui-cell:before {
+  left: 54px;
+}
+.weui-cells_checkbox .weui-cell__hd {
+  padding-right: 16px;
+}
+.weui-cells_checkbox .weui-icon-checked:before {
+  content: '\EA01';
+  color: #C9C9C9;
+  font-size: 22px;
+  display: block;
+}
+.xbtn,
+.page-tip .close_xbtn,
+.xblock-row .ques_xbtn,
+.xblock-row .next_xbtn,
+.xblock-row .close_xbtn {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  margin-top: -11px;
+  vertical-align: top;
+}
+header.nav-bar {
+  color: #fff;
+  background-color: #51c75b;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 13px 16px;
+}
+.nav-left {
+  display: inline-block;
+  position: absolute;
+  top: 13px;
+}
+.nav-left .icon_back {
+  width: 10px;
+  hegiht: 18px;
+  margin-right: 5px;
+}
+.nav-left a font.back-font {
+  font-size: 13px;
+  vertical-align: top;
+}
+.nav-title {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1;
+}
+.nav-right {
+  display: inline-block;
+  position: absolute;
+  top: 13px;
+  right: 16px;
+  z-index: 0;
+}
+.nav-right .nav-more {
+  position: relative;
+  left: 100%;
+  margin-left: -22px;
+}
+.icon_dots {
+  width: 22px;
+  height: 22px;
+}
+.nav-more-list {
+  position: relative;
+  display: none;
+  z-index: 2;
+}
+.dropdown_mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: none;
+}
+.nav-more-list .arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  position: absolute;
+  right: 11px;
+  top: -5px;
+}
+.nav-item-list {
+  background-color: #fff;
+  border-radius: 4px;
+}
+.nav-item-list .nav-item {
+  line-height: 1;
+  padding: 13px 14px;
+  width: 114px;
+  box-shadow: inset 0 -1px 0 0 #f0f0f0;
+}
+.nav-item-list .nav-item:last-child {
+  box-shadow: none;
+}
+.nav-item-list a.nav-item-link {
+  font-family: 'PingFangSC-Regular,微软雅黑';
+  font-size: 15px;
+  line-height: 1;
+  color: #131724;
+}
+.nav-item-list .nav-item .nav-link-img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+.header_masker {
+  height: 44px;
+}
+.page-tip {
+  position: relative;
+  background-color: #FEF5DA;
+  color: #FB982A;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 12px 40px 12px 16px;
+}
+.page-tip .close_xbtn {
+  width: 22px;
+  height: 22px;
+}
+.page-tip .xbtn_img {
+  width: 22px;
+  height: 22px;
+}
+.xblock {
+  margin-top: 8px;
+  line-height: 1.2;
+  font-size: 15px;
+}
+.xblock:before,
+.xblock:after {
+  display: none;
+}
+.xblock-title-row {
+  padding: 12px 16px;
+}
+.xblock-title {
+  color: #9CA5B5;
+  font-size: 12px;
+  line-height: 1;
+  font-family: 'PingFangSC-Regular,微软雅黑';
+}
+.xblock-content-list {
+  background-color: #fff;
+}
+.xblock-row {
+  padding-left: 16px;
+}
+.xblock-inner-row {
+  padding: 13px 16px 13px 0;
+  box-shadow: inset 0 -1px 0 0 #eceeef;
+  font-size: 15px;
+  line-height: 22px;
+}
+.xblock-row:last-child .xblock-inner-row {
+  box-shadow: none;
+}
+.xblock-row:before {
+  display: none;
+}
+.xblock-row-err {
+  border: 1px solid #E3324C;
+  position: relative;
+}
+.xblock-row-err:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  border-right: 20px solid #E3324C;
+  border-bottom: 20px solid transparent;
+}
+.xblock-row-err:after {
+  content: '!';
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  right: 4px;
+  top: -2px;
+  font-size: 0.7rem;
+  color: #fff;
+}
+.xblock-row-left label {
+  color: #131724;
+  font-size: 15px;
+  line-height: 1;
+  width: 104px;
+}
+.xblock-row-right input {
+  color: #131724;
+  font-size: 15px;
+  line-height: 1;
+  font-family: 'PingFangSC-Regular,微软雅黑';
+}
+.xblock-row .ques_xbtn {
+  width: 22px;
+  height: 22px;
+}
+.xblock-row a .tip-cont {
+  display: none;
+  padding: 16px;
+  background-color: #131724;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 48px;
+  right: 16px;
+  z-index: 1;
+}
+.xblock-row a .tip-arrow {
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  border-top: 4.2px solid #131724;
+  position: absolute;
+  right: 7px;
+  bottom: -4.2px;
+}
+.xblock-row a .tip-text {
+  color: #fff;
+  text-align: justify;
+}
+.xblock-row .next_xbtn {
+  width: 22px;
+  height: 22px;
+}
+.xblock-row .xbtn_close {
+  display: none;
+}
+.xblock-row .close_xbtn {
+  width: 22px;
+  height: 22px;
+}
+.xblock-select-row {
+  padding: 12px 16px;
+  font-size: 15px;
+  line-height: 22px;
+  color: #131724;
+}
+.checkbox-text {
+  width: 100px;
+  display: inline-block;
+  -ms-flex: inherit;
+      flex: inherit;
+}
+.checkbox-tip {
+  float: right;
+}
+.checkbox-tip font {
+  color: #9CA5B5;
+  font-size: 12px;
+  line-height: 1;
+  float: right;
 }

@@ -445,10 +445,3 @@ template {
 [hidden] {
   display: none;
 }
-
-body {
-  background-color: azure;
-}
-h1 {
-  color: green;
-}

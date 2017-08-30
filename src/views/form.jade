@@ -1,8 +1,63 @@
 extends layout
 
 block content
-  div.weui-cell
-    div.weui-cell__hd
-      label.weui-label qq
-    div.weui-cell__bd
-      input.weui-input(type="number",pattern="[0-9]*" placeholder="请输入qq号")
+  header.nav-bar
+    div.nav-left 
+      a#back-lin.back_xbtn
+        img.icon_back(src='images/icons/20x36/back.png',alt='',width='10',height='18')
+        font.back-font 返回
+    h1.nav-title 表单填写
+    div.nav-right#dropdown
+      a.nav-more(href='javascript:void(0);')
+        img.icon_dots(src='images/icons/44x44/dots.png',alt='',width='22',height='22')
+      div.dropdown_mask
+      div.nav-more-list
+        span.arrow
+        ul.nav-item-list
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img(src='',width='18',height='18')
+              font 本页功能一
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img
+              font 本页功能二
+  div.header_masker
+
+  div.main
+    div.page-tip
+      p 针对该页面重要的提示信息
+      a.close_xbtn
+        img.xbtn_img(width='22',height='22')
+
+    div.xblock.form-xblock
+      div.xblock-title-row
+        h2.xblock-title 选项组标题
+      ul.xblock-content-list
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 输入
+            div.xblock-row-right.weui-cell__bd
+              input.weui-input(type="number",pattern="[0-9]*",placeholder="请输入数字(必填)...")
+            a.xbtn_close(href='javascript:void(0);')
+              img.close_xbtn(src='',width='22',height='22')
+        li.xblock-row.xblock-row-err(initXbtn='tip')
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 输入(tip)
+            div.xblock-row-right.weui-cell__bd
+              input.weui-input(type="number",pattern="[0-9]*",placeholder="请输入数字(必填)...")
+            a.xbtn_tip(href='javascript:void(0);')
+              img.ques_xbtn(src='',width='22',height='22')
+              div.tip-cont
+                span.tip-arrow
+                p.tip-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facilis accusamus maiores esse earum? Possimus vel natus ut esse illum tempore, quae iusto atque! Odio saepe, voluptatem reiciendis qui ut?
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 多选
+            div.xblock-row-right.weui-cell__bd
+              font.xblock-row-placeholder 可选择多个选项
+            a.xbtn_link(href='form-mutiple-select.html')
+              img.next_xbtn(src='',width='22',height='22')
