@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  header.nav-bar
+    div.nav-left 
+      a#back-link.back_xbtn
+        img.icon_back(src='images/icons/20x36/back.png',alt='',width='10',height='18')
+        font.back-font 返回
+    h1.nav-title 单选页面
+    div.nav-right#dropdown
+      a.nav-more(href='javascript:void(0);')
+        img.icon_dots(src='images/icons/44x44/dots.png',alt='',width='22',height='22')
+      div.nav-more-list
+        div.dropdown_mask
+        span.arrow
+        ul.nav-item-list
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img(src='',width='18',height='18')
+              font 本页功能一
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img
+              font 本页功能二
+  div.header_masker
+
+  div.main
+    div.weui-cells.weui-cells_radio.xblock
+      label.weui-cell.weui-check__label.xblock-radio-row(for="x11")
+        span.weui-cell__ft
+          input#x11.weui-check(type="radio",name="radio1")
+          i.weui-icon-checked
+        span.weui-cell__bd.radio-text
+          font 单选选项一
+
+      label.weui-cell.weui-check__label.xblock-radio-row(for="x12")
+        span.weui-cell__ft
+          input#x12.weui-check(type="radio",name="radio1",checked="checked")
+          i.weui-icon-checked
+        span.weui-cell__bd.radio-text
+          font 单选选项二
+        
+    //- div.weui-cells.weui-cells_checkbox.xblock
+    //-     label.weui-cell.weui-check__label.xblock-select-row(for="s11")
+    //-       span.weui-cell__hd
+    //-         input.weui-check#s11(type="checkbox",name="checkbox1",checked="checked")
+    //-         i.weui-icon-checked
+    //-       span.weui-cell__bd.checkbox-text
+    //-         font 多选选项1
+    //-     label.weui-cell.weui-check__label.xblock-select-row(for="s12")
+    //-       span.weui-cell__hd
+    //-         input.weui-check#s12(type="checkbox",name="checkbox1")
+    //-         i.weui-icon-checked
+    //-       span.weui-cell__bd.checkbox-text
+    //-         font 多选选项2
+    //-       span.checkbox-tip
+    //-         font 针对该选项的说明文字

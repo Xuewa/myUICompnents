@@ -4,7 +4,8 @@
 //-----关于header的动效
   //---关于header的返回动效
   var $backLink = $('#back-link');
-  $backLink.on('click',function(){
+  $backLink.on('click',function(e){
+  	// if(typeof(beforeBack)!=='undefined') beforeBack();
   	window.history.back();
   });
 
@@ -109,5 +110,125 @@ $errInputRow.on('focus',function(){
   $blockRowLi.removeClass('xblock-row-err');
 });
 
+//-----多选点击后关闭事件
+var checkEle = $('input[type="checkbox"]');
+checkEle.on('click',function(){
+	var $selectsEle = $(this).parents('.weui-cells_checkbox');
+	var checkGroupName = $(this).attr('name');
+	var $selectsItemList = $selectsEle.find('.weui-check__label');
+	var checkVals = [];
+	$selectsItemList.each(function(){
+    	var checked = $(this).find('input[type="checkbox"]').is(':checked');
+    	// console.log(checked);
+    	var value = $(this).find('.checkbox-text font').text();
+    	if (checked) {
+    		checkVals.push(value);
+    	}
+	});
+    // console.log(checkVals);
+    window.localStorage.setItem(checkGroupName,checkVals);
+});
+//多选的值
+var $checkValsText = $("[data-type='checkValsText']");
+$checkValsText.each(function(){
+	var checkGroupName = $(this).attr('name');
+	var checkGroupTip = $(this).attr('data-tip');
+	var checkVals = [];
+	if(typeof(checkGroupName)!=='undefined'){
+		checkVals = window.localStorage.getItem(checkGroupName);
+		if (checkVals&& checkVals.length>0){ 
+			$checkValsText.text(checkVals).addClass('xblock-checkVals-text');
+		}else {
+			$checkValsText.text(checkGroupTip).removeClass('xblock-checkVals-text');
+		}
+	}
+});
 
+//-----单选点击后关闭事件
+var checkEle = $('input[type="radio"]');
+checkEle.on('click',function(){
+	var $radioEle = $(this).parents('.weui-cells_radio');
+	var radioGroupName = $(this).attr('name');
+	var $radiosItemList = $radioEle.find('.weui-check__label');
+	var radioVal = '';
+	$radiosItemList.each(function(){
+    	var checked = $(this).find('input[type="radio"]').is(':checked');
+    	// console.log(checked);
+    	var value = $(this).find('.radio-text font').text();
+    	if (checked) {
+    		radioVal = value;
+    	}
+	});
+    // console.log(checkVals);
+    window.localStorage.setItem(radioGroupName,radioVal);
+});
+//-----单选的值
+var $radioValText = $("[data-type='radioValText']");
+$radioValText.each(function(){
+	var radioGroupName = $(this).attr('name');
+	var radioGroupTip = $(this).attr('data-tip');
+	var radioVal = '';
+	if(typeof(radioGroupName)!=='undefined'){
+		radioVal = window.localStorage.getItem(radioGroupName);
+		// alert(radioVal);
+		if (radioVal&&radioVal.length>0){ 
+			$radioValText.text(radioVal).addClass('xblock-radioVal-text');
+		}else {
+			$radioValText.text(radioGroupTip).removeClass('xblock-radioVal-text');
+		}
+	}
+});
+
+//-----滚动选择
+$("#tourist-select").picker({
+        title: "请选择出行人数",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['00 成人', '01 成人', '02 成人', '03 成人','04 成人','05 成人']
+          },
+          {
+            textAlign: 'center',
+            values: ['00 小孩', '01 小孩', '02 小孩', '03 小孩','04 小孩','05 小孩']
+          },
+          {
+            textAlign: 'center',
+            values: ['00 婴儿', '01 婴儿', '02 婴儿', '03 婴儿','04 婴儿','05 婴儿']
+          },
+        ],
+        onClose: function(p) {
+          // console.log(p.cols);
+          var cols = p.cols;
+          var values=[];
+          for (var i=0;i<=cols.length-1;i++) {
+          	values.push(cols[i].displayValue);
+          }
+          $("#tourist-select").text(values.join(' / ')).addClass('xblock-selectVal-text');
+        }
+      });
+//-----快速单选
+var $quickSelectItem = $('.quick-select-item');
+$quickSelectItem.on('click',function(){
+  $quickSelectItem.removeClass('selected-item');
+  $(this).addClass('selected-item');
+});
+
+
+var $numDecreaseBtn = $('.num-decrease');
+var $numAddBtn = $('.num-add');
+var $numCont = $('.num-count');
+//-----减少按钮
+$numDecreaseBtn.on('click',function(){
+  var number = $numCont.text();
+  if(number>0) $numCont.text(--number);
+});
+
+//-----增加按钮
+$numAddBtn.on('click',function(){
+  var number = $numCont.text();
+  $numCont.text(++number);
+});
+
+
+	
 })($);

@@ -11,7 +11,7 @@
   <body>
     <header class="nav-bar">
       <div class="nav-left"> <a id="back-link" class="back_xbtn"><img src="images/icons/20x36/back.png" alt="" width="10" height="18" class="icon_back"><font class="back-font">返回</font></a></div>
-      <h1 class="nav-title">多选页面</h1>
+      <h1 class="nav-title">单选页面</h1>
       <div id="dropdown" class="nav-right"><a href="javascript:void(0);" class="nav-more"><img src="images/icons/44x44/dots.png" alt="" width="22" height="22" class="icon_dots"></a>
         <div class="nav-more-list">
           <div class="dropdown_mask"></div><span class="arrow"></span>
@@ -24,11 +24,11 @@
     </header>
     <div class="header_masker"></div>
     <div class="main">
-      <div class="weui-cells weui-cells_checkbox xblock">
-        <label for="s11" class="weui-cell weui-check__label xblock-select-row"><span class="weui-cell__hd">
-            <input id="s11" type="checkbox" name="checkbox1" class="weui-check"><i class="weui-icon-checked"></i></span><span class="weui-cell__bd checkbox-text"><font>多选选项1</font></span></label>
-        <label for="s12" class="weui-cell weui-check__label xblock-select-row"><span class="weui-cell__hd">
-            <input id="s12" type="checkbox" name="checkbox1" class="weui-check"><i class="weui-icon-checked"></i></span><span class="weui-cell__bd checkbox-text"><font>多选选项2</font></span><span class="checkbox-tip"><font>针对该选项的说明文字</font></span></label>
+      <div class="weui-cells weui-cells_radio xblock">
+        <label for="x11" class="weui-cell weui-check__label xblock-radio-row"><span class="weui-cell__ft">
+            <input id="x11" type="radio" name="radio1" class="weui-check"><i class="weui-icon-checked"></i></span><span class="weui-cell__bd radio-text"><font>单选选项一</font></span></label>
+        <label for="x12" class="weui-cell weui-check__label xblock-radio-row"><span class="weui-cell__ft">
+            <input id="x12" type="radio" name="radio1" checked="checked" class="weui-check"><i class="weui-icon-checked"></i></span><span class="weui-cell__bd radio-text"><font>单选选项二</font></span></label>
       </div>
     </div>
     <script type="text/javascript" src="js/libs/fastclick.js"></script>
