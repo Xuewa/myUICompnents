@@ -1,6 +1,8 @@
 (function($) {
 "use strict";
 
+FastClick.attach(document.body);
+
 //-----关于header的动效
   //---关于header的返回动效
   var $backLink = $('#back-link');
@@ -55,7 +57,7 @@ $close_xbtn.on('click',function(){
 var $inputEle = $('.weui-input');
 $inputEle.bind('input propertychange', function() { 
   var text = $(this).val();
-  var $liEle = $(this).parent().parent();
+  var $liEle = $(this).parent().parent().parent();
   var $linkEle = $liEle.find('a');
   var $imgEle = $linkEle.find('img');
   var oldAClazz = $linkEle[0]?$linkEle.attr('class'):'';
@@ -88,6 +90,7 @@ $inputEle.bind('input propertychange', function() {
       }
     });
   }else{
+  	// console.log($liEle.attr('initXbtn'));
   	if ($liEle.attr('initXbtn')==='tip'){
         $linkEle.removeClass().addClass('xbtn_tip');
         $imgEle.removeClass().addClass('ques_xbtn');
@@ -110,6 +113,12 @@ $errInputRow.on('focus',function(){
   $blockRowLi.removeClass('xblock-row-err');
 });
 
+//-------跳转
+var $linkRowEle = $('.xblock-link-row');
+$linkRowEle.on('click',function(){
+  var linkUrl = $(this).attr('data-link');
+  window.location.href = linkUrl;
+});
 //-----多选点击后关闭事件
 var checkEle = $('input[type="checkbox"]');
 checkEle.on('click',function(){
@@ -130,6 +139,8 @@ checkEle.on('click',function(){
 });
 //多选的值
 var $checkValsText = $("[data-type='checkValsText']");
+if($checkValsText.length===0) 
+  $("[type='checkValsText']");
 $checkValsText.each(function(){
 	var checkGroupName = $(this).attr('name');
 	var checkGroupTip = $(this).attr('data-tip');
@@ -161,9 +172,12 @@ checkEle.on('click',function(){
 	});
     // console.log(checkVals);
     window.localStorage.setItem(radioGroupName,radioVal);
+    // alert(window.localStorage.getItem(radioGroupName));
 });
 //-----单选的值
 var $radioValText = $("[data-type='radioValText']");
+if($radioValText.length===0) 
+  $radioValText = $("[type='radioValText']");
 $radioValText.each(function(){
 	var radioGroupName = $(this).attr('name');
 	var radioGroupTip = $(this).attr('data-tip');
@@ -178,6 +192,7 @@ $radioValText.each(function(){
 		}
 	}
 });
+
 
 //-----滚动选择
 $("#tourist-select").picker({
@@ -214,9 +229,9 @@ $quickSelectItem.on('click',function(){
 });
 
 
-var $numDecreaseBtn = $('.num-decrease');
-var $numAddBtn = $('.num-add');
-var $numCont = $('.num-count');
+var $numDecreaseBtn = $('.num-control .num-decrease');
+var $numAddBtn = $('.num-control .num-add');
+var $numCont = $('.num-control .num-count');
 //-----减少按钮
 $numDecreaseBtn.on('click',function(){
   var number = $numCont.text();
@@ -229,6 +244,41 @@ $numAddBtn.on('click',function(){
   $numCont.text(++number);
 });
 
+//-----删除搜索条件
+$('.xblock-define-search .num-decrease').on('click',function removeSearchRow(){
+  var $rowEle = $(this).parents('.xblock-row');
+  $rowEle.remove();
+});
 
-	
+//-----添加搜索条件
+$('.xblock-search-add-row .add-search').on('click',function(){
+  var $searchContainer = $(this).parents().find('.xblock-content-list');
+  var $newLiStr = '<li class="xblock-row">'+
+            '<div class="xblock-inner-row weui-cell">'+
+              '<div class="xblock-search-row-left weui-cell__hd"><span class="num-decrease icon-decrease_circle"></span>'+
+                '<label class="weui-label search-row-label"></label><a href="javascript:void(0);" class="next_xbtn"><img src="" width="22" height="22" class="right_xbtn"></a>'+
+              '</div>'+
+              '<div class="xblock-search-row-right weui-cell__bd">'+
+                '<input  class="weui-input">'+
+              '</div>'+
+            '</div>'+
+          '</li>';
+  $searchContainer.append($newLiStr);
+  $('.xblock-define-search .num-decrease').on('click',function removeSearchRow(){
+    var $rowEle = $(this).parents('.xblock-row');
+    $rowEle.remove();
+  });
+});
+
+//-----搜索条件常用多选
+var $labelsSearch = $('.xblock-label-search .label-item');
+$labelsSearch.on('click',function(){
+  $(this).toggleClass('label-active');
+})
+
+$('#slider1').slider(function (percent) {
+  // console.log(percent);
+  $('#sliderValue').text(percent);
+});
+
 })($);

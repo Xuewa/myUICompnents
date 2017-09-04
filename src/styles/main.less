@@ -39,7 +39,7 @@ header.nav-bar{color: #fff;background-color:@theme-color;position: fixed;
 .nav-left{display: inline-block;position: absolute;top: 13px;}
 .nav-left .icon_back{width:10px;hegiht:18px;margin-right: 5px;}
 .nav-left a font.back-font{font-size: @font-s-13;vertical-align: top;}
-.nav-title{padding: 0; margin: 0;text-align: center;font-size: @font-s-18;line-height: 1;}
+.nav-title{padding: 0; margin: 0;text-align: center;font-size: @font-s-18;line-height:1;font-weight:normal;font-family:@PF-sBold;}
 .nav-right{display: inline-block;position: absolute;top: 13px;right:16px;z-index: 0;}
 .nav-right .nav-more{position: relative;left: 100%;margin-left: -22px;}
 .icon_dots{width: 22px;height: 22px;}
@@ -67,14 +67,14 @@ header.nav-bar{color: #fff;background-color:@theme-color;position: fixed;
 .xblock{margin-top: 8px;line-height: 1.2;font-size: 15px;}
 .xblock:before,.xblock:after{display: none;}
 .xblock-title-row{padding:12px 16px;}
-.xblock-title{color:#9CA5B5;font-size: 12px;line-height: 1;font-family: @PF-reg;}
+.xblock-title{font-weight:normal;color:#9CA5B5;font-size: 12px;line-height: 1;font-family: @PF-reg;}
 .xblock-content-list{background-color: #fff;}
 .xblock-row{padding-left: 16px;}
 .xblock-inner-row{padding:13px 16px 13px 0;
 	// box-shadow: inset 0 -0.5px 0 0 #ECEEEF;
 	font-size: 15px;line-height: 22px;}
 .xblock-inner-row:after{position:absolute;top:48px;display:inline-block;content:'';height:0.5px;left:0;width:100%;background-color:#ECEEEF;}
-.xblock-row:last-child .xblock-inner-row:after{display:none;}
+.xblock-form .xblock-row:last-child .xblock-inner-row:after{display:none;}
 // .xblock-row:last-child .xblock-inner-row{box-shadow: none;}
 .xblock-row:before{display: none;}
 //验证失败
@@ -138,3 +138,33 @@ button.primary-btn{background-color: @theme-color;border:none;color:#fff;display
 button.primary-btn-l{&:extend(button.primary-btn);}
 button.primary-btn-m{&:extend(button.primary-btn);width:calc(~"100% - 64px");border-radius:4px;}
 button.secondary-btn{&:extend(button.primary-btn);width:calc(~"100% - 64px");border:1px solid @theme-color;border-radius:4px;color: @theme-color;background-color:inherit;}
+
+.xblock-search{background-color:#fff;}
+//日期选择
+.xblock-date-row{margin-bottom:32px;background-color:#fff;padding: 16px 16px 0 16px;}
+.xblock-date-row .date-col{margin-right:16px;display:inline-block;width: calc(~"50% - 16px");position:relative;}
+.xblock-date-row .date-col:after{display:inline-block;content:'';position:absolute;top:66px;right:0;height:0.5px;width:100%;background-color:#ECEEEF;}
+.xblock-date-row .date-col:last-child{margin-right:0;}
+.xblock-date-row .date-title{color:#9CA5B5;font-weight:normal;font-size:12px;}
+.xblock-date-row .date-val{display:inline-block;font-size:24px;line-height:1;font-family:SFUIDisplay-Bold;color:@theme-color;padding:12px 0; }
+//自定义搜索
+.xblock-define-search{margin-bottom:32px;}
+.xblock-search-row-left{width: 120px;position:relative;}
+.xblock-search-row-left:after{display:inline-block;content:'';position:absolute;width:0.5px;height:48px;left:120px;top:-12px;background-color:#ECEEEF;}
+.search-row-label{color:#4678D4;font-family:@PF-reg;display:inline;vertical-align:top;}
+.xblock-search-row-left .next_xbtn{right:8px;}
+.xblock-search-row-right{padding-left:16px;}
+.xblock-search-add-row .weui-label{color:#131724;font-family:@PF-reg;}
+//-----常用多选搜索
+.xblock-label-search{background-color:#fff;margin-bottom: 32px;}
+.labels-list{padding:0 7px 0 16px;margin-top:4px;}
+.labels-list .label-item{font-size:14px;margin:0 5px 9px 0;display:inline-block;width:79px;height:36px;text-align:center;background-color:#F2F5F9;color:#9CA5B5;border-radius:4px;line-height:36px;vertical-align:middle;}
+.labels-list .label-item.label-active{background-color:@theme-color;color:#fff; }
+
+//-----搜索历史
+.xblock-search-history-block .search-histories-list{padding:0 16px;}
+.xblock-search-history-block .search-history-item{position:relative;}
+.xblock-search-history-block .search-history-item:after{position:absolute;left:0;top:48px;display: inline-block;content:'';height:0.5px;width:100%;background-color:#F0F0F0;}
+.xblock-search-history-block .search-history-item span{color:#4678D4;font-family:@PF-reg;width:calc(~"100% - 31px") ;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;padding:17px 0;display:inline-block;font-size:14px;line-height:1;vertical-align:middle;}
+.xblock-search-history-block .clear-history-row{margin:0 16px;}
+.xblock-search-history-block .clear-history-row .clear-history{color:#9CA5B5;text-align:center;font-size:15px;padding:16.5px 0;}

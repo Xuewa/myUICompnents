@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/jquery-weui.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body>
+  <body ontouchstart>
     <header class="nav-bar">
       <div class="nav-left"> <a id="back-lin" class="back_xbtn"><img src="images/icons/20x36/back.png" alt="" width="10" height="18" class="icon_back"><font class="back-font">返回</font></a></div>
       <h1 class="nav-title">表单填写</h1>
@@ -42,7 +42,7 @@
               </div><a href="javascript:void(0);" class="xbtn_close"><img src="" width="22" height="22" class="close_xbtn"></a>
             </div>
           </li>
-          <li initXbtn="tip" class="xblock-row xblock-row-err">
+          <li data-initXbtn="tip" class="xblock-row xblock-row-err">
             <div class="xblock-inner-row weui-cell">
               <div class="xblock-row-left weui-cell__hd">
                 <label class="weui-label">输入(tip)</label>
@@ -55,20 +55,20 @@
                 </div></a>
             </div>
           </li>
-          <li class="xblock-row">
+          <li data-link="form-mutiple-select.html" class="xblock-row xblock-link-row">
             <div class="xblock-inner-row weui-cell">
               <div class="xblock-row-left weui-cell__hd">
                 <label class="weui-label">多选</label>
               </div>
-              <div class="xblock-row-right weui-cell__bd"><font name="checkbox1" data-type="checkValsText" data-tip="可选择多个选项" class="xblock-row-placeholder">可选择多个选项</font></div><a href="form-mutiple-select.html" class="xbtn_link"><img src="" width="22" height="22" class="next_xbtn"></a>
+              <div class="xblock-row-right weui-cell__bd"><font name="checkbox1" data-type="checkValsText" data-tip="可选择多个选项" class="xblock-row-placeholder">可选择多个选项</font></div><a href="javascript:void(0);" class="xbtn_link"><img src="" width="22" height="22" class="next_xbtn"></a>
             </div>
           </li>
-          <li class="xblock-row">
+          <li data-link="form-single-select.html" class="xblock-row xblock-link-row">
             <div class="xblock-inner-row weui-cell">
               <div class="xblock-row-left weui-cell__hd">
                 <label class="weui-label">单选</label>
               </div>
-              <div class="xblock-row-right weui-cell__bd"><font name="radio1" data-type="radioValText" data-tip="请选择一个选项" class="xblock-row-placeholder">请选择一个选项</font></div><a href="form-single-select.html" class="xbtn_link"><img src="" width="22" height="22" class="next_xbtn"></a>
+              <div class="xblock-row-right weui-cell__bd"><font name="radio1" data-type="radioValText" data-tip="请选择一个选项" class="xblock-row-placeholder">请选择一个选项</font></div><a href="javascript:void(0);" class="xbtn_link"><img src="" width="22" height="22" class="next_xbtn"></a>
             </div>
           </li>
           <li class="xblock-row">

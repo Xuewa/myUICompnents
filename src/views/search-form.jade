@@ -1,0 +1,108 @@
+extends layout
+
+block content
+  header.nav-bar
+    div.nav-left 
+      a#back-lin.back_xbtn
+        img.icon_back(src='images/icons/20x36/back.png',alt='',width='10',height='18')
+        font.back-font 返回
+    h1.nav-title 产品搜索
+    div.nav-right#dropdown
+      a.nav-more(href='javascript:void(0);')
+        img.icon_dots(src='images/icons/44x44/dots.png',alt='',width='22',height='22')
+      div.dropdown_mask
+      div.nav-more-list
+        span.arrow
+        ul.nav-item-list
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img(src='',width='18',height='18')
+              font 本页功能一
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img
+              font 本页功能二
+  div.header_masker
+
+  div.main.xblock-search
+    //- dateplugins未嵌入
+    div.xblock-date-row
+      span.date-col
+        h3.date-title 日期选择(开始)
+        span#beginDate.date-val 2017.05.24
+      span.date-col
+        h3.date-title 日期选择(结束)
+        span#beginDate.date-val 2017.05.24
+    //- 
+    div.xblock-define-search
+      div.xblock-title-row
+        h2.xblock-title 自定义搜索
+      ul.xblock-content-list
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-search-row-left.weui-cell__hd
+              span.num-decrease.icon-decrease_circle
+              label.weui-label.search-row-label 团队编号
+              a.next_xbtn(href='javascript:void(0);')
+               img.right_xbtn(src='',width='22',height='22')
+            div.xblock-search-row-right.weui-cell__bd
+              input.weui-input(type="number",pattern="[0-9]*",placeholder="请输入团队编号...")
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-search-row-left.weui-cell__hd
+              span.num-decrease.icon-decrease_circle
+              label.weui-label.search-row-label 产品名称
+              a.next_xbtn(href='javascript:void(0);')
+               img.right_xbtn(src='',width='22',height='22')
+            div.xblock-search-row-right.weui-cell__bd
+              input.weui-input(placeholder="请输入产品名称...")  
+      div.xblock-row.xblock-search-add-row
+        div.xblock-inner-row.weui-cell
+          span.add-search
+            span.num-add.icon-add_circle
+            label.weui-label.search-row-label &nbsp;添加搜索条件
+
+    div.xblock-label-search
+      div.xblock-title-row
+        h2.xblock-title 常用多选(4个字以内)
+      ul.labels-list
+        li.label-item 大堡礁
+        li.label-item 悉尼
+        li.label-item 巴黎
+        li.label-item 墨尔本
+        li.label-item 黄金海岸
+
+    div.xblock-slider-block
+      div.xblock-title-row
+        h2.xblock-title 选择一个区间
+      div.weui-slider-box#slider1
+        div.weui-slider
+          div#sliderInner.weui-slider__inner
+            div#sliderTrack.weui-slider__track(style="width: 75%;")
+            div#sliderHandler.weui-slider__handler(style="left: 75%;")
+            div#sliderTrack2.weui-slider__track2(style="width: 75%;")
+            div#sliderHandler2.weui-slider__handler2(style="left: 75%;")
+       div#sliderValue.weui-slider-box__value 75
+
+    div.xblock-search-history-block
+      div.xblock-title-row
+        h2.xblock-title 搜索历史
+      ul.search-histories-list
+        li.search-history-item
+          span 斯里兰卡 + 2天 + 广州
+          a.xbtn_close(href='javascript:void(0);')
+            img.close_xbtn(src='',width='22',height='22')
+
+        li.search-history-item
+          span 斯里兰卡 + 7天 + 北京 + GZLGZ0CF2CK1SDFSDF12312
+          a.xbtn_close(href='javascript:void(0);')
+            img.close_xbtn(src='',width='22',height='22')
+      div.search-history-item.clear-history-row
+        span.clear-history 清除搜索历史
+
+    button.primary-btn-m 搜索
+        
+       
+
+
+            

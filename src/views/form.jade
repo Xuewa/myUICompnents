@@ -42,7 +42,7 @@ block content
               input.weui-input(type="number",pattern="[0-9]*",placeholder="请输入数字(必填)...")
             a.xbtn_close(href='javascript:void(0);')
               img.close_xbtn(src='',width='22',height='22')
-        li.xblock-row.xblock-row-err(initXbtn='tip')
+        li.xblock-row.xblock-row-err(data-initXbtn='tip')
           div.xblock-inner-row.weui-cell
             div.xblock-row-left.weui-cell__hd
               label.weui-label 输入(tip)
@@ -53,21 +53,21 @@ block content
               div.tip-cont
                 span.tip-arrow
                 p.tip-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facilis accusamus maiores esse earum? Possimus vel natus ut esse illum tempore, quae iusto atque! Odio saepe, voluptatem reiciendis qui ut?
-        li.xblock-row
+        li.xblock-row.xblock-link-row(data-link='form-mutiple-select.html')
           div.xblock-inner-row.weui-cell
             div.xblock-row-left.weui-cell__hd
               label.weui-label 多选
             div.xblock-row-right.weui-cell__bd
               font.xblock-row-placeholder(name='checkbox1',data-type='checkValsText',data-tip='可选择多个选项') 可选择多个选项
-            a.xbtn_link(href='form-mutiple-select.html')
+            a.xbtn_link(href='javascript:void(0);')
               img.next_xbtn(src='',width='22',height='22')
-        li.xblock-row
+        li.xblock-row.xblock-link-row(data-link='form-single-select.html')
           div.xblock-inner-row.weui-cell
             div.xblock-row-left.weui-cell__hd
               label.weui-label 单选
             div.xblock-row-right.weui-cell__bd
               font.xblock-row-placeholder(name='radio1',data-type='radioValText',data-tip='请选择一个选项') 请选择一个选项
-            a.xbtn_link(href='form-single-select.html')
+            a.xbtn_link(href='javascript:void(0);')
               img.next_xbtn(src='',width='22',height='22')
         li.xblock-row
           div.xblock-inner-row.weui-cell
