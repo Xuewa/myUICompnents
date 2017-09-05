@@ -243,20 +243,24 @@
 .i_next:hover{ background-position:-69px 0px;}
 
 .ta_calendar td.ta_dateRangeSelected{
-    background:#cbe6f5;
+    background:#e7f9d2;
+    color:#51C75B; 
 }
 .ta_calendar td.ta_dateRangeGray{
-    color: #BBB;
+    color: #D2DBE2;
     cursor: default;
 }
 
 .ta_calendar td.first,.ta_calendar td.today{
-	background:#4eb5f7;
+	background:#51C75B;
+    color: #fff;
 }
 .ta_calendar td.first:after,.ta_calendar td.today:after{content: "入住";display: block; font-size: 10px;color:#fff;}
 
 .ta_calendar td.last{
-    background:#4eb5f7;
+    background:#51C75B;
+    color:#fff;
+    /*border-radius:50%; */
 }
 .ta_calendar td.last:after{content: "离店";display: block; font-size: 10px;color:#fff;}
 
@@ -270,7 +274,12 @@
 	border-collapse:collapse;
     width: 100%;
 }
-.ta_calendar table caption{ text-align:center; height:40px; line-height:40px; font-size:14px;  box-shadow:0px 1px 1px rgba(0,0,0,0.1);}
+.ta_calendar table caption{ text-align:center; 
+    height:40px; line-height:40px; font-size:16px;  
+    box-shadow:0px 1px 1px rgba(0,0,0,0.1);
+    color:#131724;
+    font-family:'PingFangSC-Regular','微软雅黑'; 
+}
 .ta_calendar table thead tr {
 	background:#fff;
 
@@ -332,9 +341,11 @@
 .ta_calendar table tbody td {
 	text-align:center;
 	white-space:nowrap;
-	font-family:"Tahoma";
-    background: #edf8fe;
-    height: 40px;
+    font-size:15px; 
+	font-family:'PingFangSC-Regular','微软雅黑';;
+    background: #fff;
+    color:#131724;
+    height: 49px;
     width: 14%;
     border: 1px solid #fff;
 }
