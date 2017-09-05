@@ -278,8 +278,11 @@
 .ta_calendar table thead th {
 	cursor: pointer;
 	text-align:center;
-    height: 40px;
-
+    height: 49px;
+    color:#131724;
+    font-size: 15px;
+    font-family:'PingFangSC-Medium','微软雅黑';
+    font-weight: normal; 
 }
 
 .ta_calendar table.calendar-month {

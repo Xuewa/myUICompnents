@@ -1039,9 +1039,10 @@ pickerDateRange.prototype.show = function(isCompare, __method) {
         left = pos.left + $('#' + this.inputId).width() - $("#" + this.calendarId).width() + ((/msie/i.test(navigator.userAgent) && !(/opera/i.test(navigator.userAgent)))? 5 : 0) ;
 		__method.mOpts.theme=='ta' && (left += 50);
 	}
-    $("#" + this.calendarId).css('left', left  + 'px');
+    $("#" + this.calendarId).css({'left': left+16  + 'px','right':'16px'});
     //$("#" + this.calendarId).css('top', pos.top + (offsetHeight ? offsetHeight- 1 : (__method.mOpts.theme=='ta'?35:22)) + 'px');
-	$("#" + this.calendarId).css('top', pos.top + (__method.mOpts.theme=='ta'?35:22) + 'px');
+    $("#" + this.calendarId).css('top', pos.top + (__method.mOpts.theme=='ta'?85:22) + 'px');
+	// $("#" + this.calendarId).css('padding', pos.top + (__method.mOpts.theme=='ta'?85:22) + 'px');
 	//第一次显示的时候，一定要初始化输入框
 	isCompare ? this.changeInput(this.startCompareDateId) : this.changeInput(this.startDateId);
     return false;
@@ -1210,7 +1211,7 @@ pickerDateRange.prototype.fillDate = function(year, month, index) {
 		$(table).append(cap);
 		thead = document.createElement('thead');
 		tr = document.createElement('tr');
-		var days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+		var days = ['日', '一', '二', '三', '四', '五', '六'];
 		for(var i = 0; i < 7; i ++) {
 			th = document.createElement('th');
 			$(th).append(days[i]);
