@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
+var csscomb = require('gulp-csscomb');
 
 // Load plugins
 var $ = require('gulp-load-plugins')();
@@ -24,12 +25,14 @@ gulp.task('styles_less', function() {
           browsers: browsers
         })
       ]))
+    .pipe($.csscomb())
     .pipe(gulp.dest('build'))
     .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('styles_css', function() {
   return gulp.src('src/**/*.css')
+    // .pipe(csscomb())
     .pipe(gulp.dest('build'))
     .pipe(browserSync.reload({stream: true}));
 });

@@ -54,7 +54,7 @@ $close_xbtn.on('click',function(){
 });
 
 //-----绑定输入框的动作
-var $inputEle = $('.weui-input');
+var $inputEle = $('.form-xblock .weui-input');
 $inputEle.bind('input propertychange', function() { 
   var text = $(this).val();
   var $liEle = $(this).parent().parent().parent();
@@ -194,33 +194,7 @@ $radioValText.each(function(){
 });
 
 
-//-----滚动选择
-$("#tourist-select").picker({
-        title: "请选择出行人数",
-        cols: [
-          {
-            textAlign: 'center',
-            values: ['00 成人', '01 成人', '02 成人', '03 成人','04 成人','05 成人']
-          },
-          {
-            textAlign: 'center',
-            values: ['00 小孩', '01 小孩', '02 小孩', '03 小孩','04 小孩','05 小孩']
-          },
-          {
-            textAlign: 'center',
-            values: ['00 婴儿', '01 婴儿', '02 婴儿', '03 婴儿','04 婴儿','05 婴儿']
-          },
-        ],
-        onClose: function(p) {
-          // console.log(p.cols);
-          var cols = p.cols;
-          var values=[];
-          for (var i=0;i<=cols.length-1;i++) {
-          	values.push(cols[i].displayValue);
-          }
-          $("#tourist-select").text(values.join(' / ')).addClass('xblock-selectVal-text');
-        }
-      });
+
 //-----快速单选
 var $quickSelectItem = $('.quick-select-item');
 $quickSelectItem.on('click',function(){
@@ -274,11 +248,64 @@ $('.xblock-search-add-row .add-search').on('click',function(){
 var $labelsSearch = $('.xblock-label-search .label-item');
 $labelsSearch.on('click',function(){
   $(this).toggleClass('label-active');
-})
+});
 
+
+
+
+
+//--------------------调用
+//-----滚动选择
+$("#tourist-select").picker({
+        title: "请选择出行人数",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['00 成人', '01 成人', '02 成人', '03 成人','04 成人','05 成人']
+          },
+          {
+            textAlign: 'center',
+            values: ['00 小孩', '01 小孩', '02 小孩', '03 小孩','04 小孩','05 小孩']
+          },
+          {
+            textAlign: 'center',
+            values: ['00 婴儿', '01 婴儿', '02 婴儿', '03 婴儿','04 婴儿','05 婴儿']
+          },
+        ],
+        onClose: function(p) {
+          // console.log(p.cols);
+          var cols = p.cols;
+          var values=[];
+          for (var i=0;i<=cols.length-1;i++) {
+          	values.push(cols[i].displayValue);
+          }
+          $("#tourist-select").text(values.join(' / ')).addClass('xblock-selectVal-text');
+        }
+      });
+
+
+//-----日历控件
+var dateRange1 = new pickerDateRange('datePicker', {
+	stopToday : false,
+	isTodayValid : true,
+	startDate: '2017-09-05',
+	endDate: '2017-09-07',
+	needCompare : false,
+	defaultText : ' 至 ',
+	autoSubmit : false,
+	inputTrigger : 'input_trigger1',
+	theme : 'ta',
+	// shortOpr:true
+	// magicSelect:true
+});
+
+
+
+//-----滑动
 $('#slider1').slider(function (percent) {
   // console.log(percent);
   $('#sliderValue').text(percent);
 });
+
 
 })($);

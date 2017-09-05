@@ -166,5 +166,17 @@ button.secondary-btn{&:extend(button.primary-btn);width:calc(~"100% - 64px");bor
 .xblock-search-history-block .search-history-item{position:relative;}
 .xblock-search-history-block .search-history-item:after{position:absolute;left:0;top:48px;display: inline-block;content:'';height:0.5px;width:100%;background-color:#F0F0F0;}
 .xblock-search-history-block .search-history-item span{color:#4678D4;font-family:@PF-reg;width:calc(~"100% - 31px") ;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;padding:17px 0;display:inline-block;font-size:14px;line-height:1;vertical-align:middle;}
-.xblock-search-history-block .clear-history-row{margin:0 16px;}
-.xblock-search-history-block .clear-history-row .clear-history{color:#9CA5B5;text-align:center;font-size:15px;padding:16.5px 0;}
+.xblock-search-history-block .search-history-item .close_xbtn{
+	&:extend(.xblock-row .close_xbtn);
+	right:0;
+}
+.xblock-search-history-block .clear-history-row{
+	margin:0 16px;
+}
+.xblock-search-history-block .clear-history-row .clear-history{
+	color:#9CA5B5;
+	text-align:center;
+	font-size:15px;
+	padding:16.5px 0;
+}
+.xblock-search-row-right input{color:#131724;}

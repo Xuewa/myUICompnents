@@ -6,6 +6,7 @@
     <title>主页面</title>
     <link rel="stylesheet" href="styles/weui.css">
     <link rel="stylesheet" href="styles/jquery-weui.css">
+    <link rel="stylesheet" href="styles/dateRange.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body ontouchstart>
@@ -24,9 +25,9 @@
     </header>
     <div class="header_masker"></div>
     <div class="main xblock-search">
-      <div class="xblock-date-row"><span class="date-col">
-          <h3 class="date-title">日期选择(开始)</h3><span id="beginDate" class="date-val">2017.05.24</span></span><span class="date-col">
-          <h3 class="date-title">日期选择(结束)</h3><span id="beginDate" class="date-val">2017.05.24</span></span></div>
+      <div id="datePicker" class="xblock-date-row"><span class="date-col">
+          <h3 class="date-title">日期选择(开始)</h3><span id="startDateSpan" class="date-val">2017.05.24</span></span><span class="date-col">
+          <h3 class="date-title">日期选择(结束)</h3><span id="endDateSpan" class="date-val">2017.05.24</span></span></div>
       <div class="xblock-define-search">
         <div class="xblock-title-row">
           <h2 class="xblock-title">自定义搜索</h2>
@@ -100,6 +101,7 @@
     </div>
     <script type="text/javascript" src="js/libs/fastclick.js"></script>
     <script type="text/javascript" src="js/libs/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/libs/dateRange.js"></script>
     <script type="text/javascript" src="js/libs/jquery-weui.js"></script>
     <script type="text/javascript" src="js/my.js"></script>
   </body>
