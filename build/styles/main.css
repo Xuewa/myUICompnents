@@ -454,9 +454,17 @@ button.secondary-btn{ width: calc(100% - 64px); border: 1px solid #51c75b; borde
 .irs-grid-pol{ opacity: 0.5; background: #428bca;}
 .irs-grid-pol.small{ background: #999;}
 .irs-grid-text{ bottom: 5px; color: #99a4ac;}
-.slide-info-xblock{ padding-left: 10px; width: calc(100% - 10px); overflow: hidden;}
+.card-info-list .card-info-item{ background-color: #fff; margin: 0 12px 12px 12px; border-radius: 4px; padding: 20px 0;}
+.card-info-title .card-title-icon{ color: #fff; display: inline-block; background-color: #51c75b; width: 44px; height: 28px; line-height: 28px; text-align: center; border-top-right-radius: 28px; border-bottom-right-radius: 28px; font-weight: normal; font-size: 16px;}
+.card-info-title .card-title-text{ color: #131724; font-size: 17px; line-height: 28px; height: 28px; vertical-align: middle; display: inline-block; margin-left: 8px;}
+.card-info-item .card-small-text{ color: #9ca5b5; font-family: 'PingFangSC-Regular', '微软雅黑'; line-height: 12px; font-size: 12px; margin: 12px 12px 12px 52px;}
+.card-info-item .card-info-content{ margin-bottom: 16px;}
+.card-info-item .card-info-content:last-child{ margin-bottom: 0;}
+.card-info-item .card-info-content .card-content-icon{ margin: 0 16px 0 16px;}
+.card-info-item .card-info-content .card-info-text{ display: inline-block; font-family: 'PingFangSC-Regular', '微软雅黑'; color: #131724; font-size: 14px; line-height: 20px; width: calc(100% - 53px);}
+.slide-info-xblock{ padding-left: 12px; width: calc(100% - 12px); overflow: hidden;}
 .slide-info-xblock .slide-info-item{ display: block; width: calc(100% + 90px); position: relative; margin-bottom: 8px;}
-.slide-info-xblock .slide-info-item .slide-item-flex{ background-color: #fff; border-radius: 4px; width: calc(100% - 130px); display: inline-block; padding: 16px; text-align: justify; border-left: 3px solid #fb982a;}
+.slide-info-xblock .slide-info-item .slide-item-flex{ background-color: #fff; border-radius: 4px; width: calc(100% - 138px); display: inline-block; padding: 16px; text-align: justify; border-left: 3px solid #fb982a;}
 .slide-item-flex .slide-info-title{ margin-bottom: 12px;}
 .slide-item-flex .slide-info-title .left_text{ color: #131724; font-family: 'PingFangSC-Semibold', '微软雅黑'; font-weight: normal; font-size: 17px;}
 .slide-item-flex .slide-info-title span.separator_text{ color: #d2dbe2; font-family: 'PingFangSC-Regular', '微软雅黑'; font-size: 14px; font-weight: normal;}

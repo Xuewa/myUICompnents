@@ -219,10 +219,69 @@ button.secondary-btn{&:extend(button.primary-btn);width:calc(~"100% - 64px");bor
 .irs-grid-pol.small{background:#999}
 .irs-grid-text{bottom:5px;color:#99a4ac}
 
-//-----卡片信息展示
+//-----卡片信息展示:静态
+.card-info-list .card-info-item{
+	background-color: #fff;
+	margin:0 12px 12px 12px;
+	border-radius: 4px;
+	padding: 20px 0;
+}
+.card-info-title .card-title-icon{
+  color:#fff;
+  display: inline-block;
+  background-color:@theme-color;
+  width: 44px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-top-right-radius: 28px;
+  border-bottom-right-radius: 28px; 
+  // margin-top:20px;
+  font-weight: normal;
+  // padding-left: 11px;
+  font-size: 16px;
+}
+.card-info-title .card-title-text{
+  color:#131724;
+  font-size: 17px;
+  line-height: 28px;
+  height:28px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.card-info-item .card-small-text{
+	color:#9CA5B5;
+	font-family: @PF-reg;
+	line-height: 12px;
+	font-size: 12px;
+	margin: 12px 12px 12px 52px;
+}
+
+.card-info-item .card-info-content{
+	margin-bottom: 16px;
+}
+.card-info-item .card-info-content:last-child{
+	margin-bottom: 0;
+}
+.card-info-item .card-info-content .card-content-icon{
+	margin: 0 16px 0 16px;
+}
+.card-info-item .card-info-content .card-info-text{
+	display: inline-block;
+	font-family: @PF-reg;
+	color:#131724;font-size: 14px;
+	line-height: 20px;
+	width: calc(~"100% - 53px");
+}
+
+
+
+//-----卡片信息展示:滑动
 .slide-info-xblock{
-	padding-left:10px;
-	width:calc(~"100% - 10px");
+	padding-left:12px;
+	width:calc(~"100% - 12px");
 	overflow:hidden;}
 .slide-info-xblock .slide-info-item{
 	display: block;
@@ -233,7 +292,7 @@ button.secondary-btn{&:extend(button.primary-btn);width:calc(~"100% - 64px");bor
 .slide-info-xblock .slide-info-item .slide-item-flex{
 	background-color: #fff;
 	border-radius: 4px;
-	width: calc(~"100% - 130px");
+	width: calc(~"100% - 138px");
 	display: inline-block;
 	padding: 16px;
 	text-align: justify;
