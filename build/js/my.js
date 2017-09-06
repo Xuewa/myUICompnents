@@ -307,5 +307,34 @@ $('#slider1').slider(function (percent) {
   $('#sliderValue').text(percent);
 });
 
+$(".range-sel").ionRangeSlider({
+  min: 1,
+  max: 10,
+  step: 1,
+  postfix: "天",
+  type: "double",
+  // grid: true,
+  onFinish: function (data) {
+    console.log("onFinish");
+    $(".irs-single").removeClass("active");
+  }
+});
+
+$('.irs-slider').on('touchstart',function(){
+  $('.irs-single').addClass('active');
+})
+
+var $historyBtns = $('.search-history-item .close_xbtn');
+$historyBtns.on('click',function(){
+	var $historyRow = $(this).parents('.search-history-item');
+	$historyRow.remove();
+});
+
+$('.clear-history').on('click',function(){
+	$historyBtns.trigger('click');
+	var nullStr = '<li class="search-history-item no-history">无历史记录</li>';
+	$('ul.search-histories-list').append(nullStr);
+	$(this).parent().hide();
+});
 
 })($);

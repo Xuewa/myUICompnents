@@ -151,25 +151,27 @@
 		],
 		ta:[
 			'<div id="' + this.calendarId + '" class="ta_calendar ta_calendar2 cf">',
-				'<div class="ta_calendar_cont cf" id="'+ this.dateListId +'">',
+				'<div class="ta_calendar_mask" ></div>',
+                '<div class="ta_calendar_cont cf" id="'+ this.dateListId +'">',
 					//'<table class="dateRangePicker"><tr id="' + this.dateListId + '"></tr></table>',
 				'</div>',
 				'<div class="ta_calendar_footer cf" '+ (this.mOpts.autoSubmit ? ' style="display:none" ' : '') +'>',
-					'<div class="frm_msg">',
-						'<div id="' + this.dateRangeDiv + '">',
+					// '<div class="frm_msg">',
+						'<div id="' + this.dateRangeDiv + '" style="display:none;">',
 							'<input type="text" class="ta_ipt_text_s" name="' + this.startDateId + '" id="' + this.startDateId + '" value="' + this.mOpts.startDate + '" readonly />',
 							'<span class="' + this.mOpts.joinLineId + '"> - </span>',
 							'<input type="text" class="ta_ipt_text_s" name="' + this.endDateId + '" id="' + this.endDateId + '" value="' + this.mOpts.endDate + '" readonly /><br />',
 						'</div>',
-						'<div id="' + this.dateRangeCompareDiv + '">',
+						'<div id="' + this.dateRangeCompareDiv + '" >',
 							'<input type="text" class="ta_ipt_text_s" name="' + this.startCompareDateId + '" id="' + this.startCompareDateId + '" value="' + this.mOpts.startCompareDate + '" readonly />',
 							'<span class="' + this.mOpts.joinLineId + '"> - </span>',
 							'<input type="text" class="ta_ipt_text_s" name="' + this.endCompareDateId + '" id="' + this.endCompareDateId + '" value="' + this.mOpts.endCompareDate + '" readonly />',
 						'</div>',
-					'</div>',
+					// '</div>',
 					'<div class="frm_btn">',
-						'<input class="ta_btn ta_btn_primary" type="button" name="' + this.submitBtn + '" id="' + this.submitBtn + '" value="确定" />',
-						'<input class="ta_btn" type="button" id="' + this.closeBtn + '" value="取消"/>',
+						'<button class="ta_btn ta_btn_primary" name="' + this.submitBtn 
+                        + '" id="' + this.submitBtn + '">保存</button>',
+						// '<button class="ta_btn ta_btn_primary" id="' + this.closeBtn + '">取消</button>',
 					'</div>',
 				'</div>',
 			'</div>'
@@ -211,7 +213,7 @@
 	}
     // 把时间选择框放到页面中
     $(0 < $('#appendParent').length ? '#appendParent' : document.body).append(wrapper[this.mOpts.theme].join(''));
-    $('#' + this.calendarId).css('z-index', 9999);
+    $('#' + this.calendarId).css('z-index', 99);
     // 初始化目标地址的元素
     if(1 > $('#' + this.mOpts.startDateId).length) {
         $(''!=this.mOpts.target?'#'+this.mOpts.target:'body').append('<input type="hidden" id="' + this.mOpts.startDateId + '" name="' + this.mOpts.startDateId + '" value="' + this.mOpts.startDate + '" />');
@@ -304,6 +306,9 @@
 								'endCompareDate':$('#' + __method.mOpts.endCompareDateId).val()
 								});
         return false;
+    });
+    $('.ta_calendar_mask').bind('click',function(){
+         __method.close(1);
     });
     // 日期选择关闭按钮的 click 事件
     $('#' + this.closeBtn).bind('click', function() {
@@ -465,7 +470,7 @@ pickerDateRange.prototype.init = function(isCompare) {
     var $dateEle = $("#" + this.dateListId);
     var $calendarTableEle = $dateEle.find('.'+this.mOpts.dateTable);
     if ($calendarTableEle.length>0) $("#" + this.dateListId).empty();
-	console.log(this.dateListId);
+	// console.log(this.dateListId);
     // 如果开始日期为空，则取当天的日期为开始日期
     var endDate = '' == this.mOpts.endDate ? (new Date()) : this.str2date(this.mOpts.endDate);
     // 日历结束时间
@@ -1021,13 +1026,13 @@ pickerDateRange.prototype.selectDate = function(ymd) {
  * @param {Object} __method 时期选择器超级对象
  */ 
 pickerDateRange.prototype.show = function(isCompare, __method) {
-	$('#' + __method.dateRangeDiv).css('display', isCompare ? 'none' : '');
+	// $('#' + __method.dateRangeDiv).css('display', isCompare ? 'none' : '');
 	$('#' + __method.dateRangeCompareDiv).css('display', isCompare ? '' : 'none');
     var pos = isCompare ?  $('#' + this.inputCompareId).offset() : $('#' + this.inputId).offset();
 	var offsetHeight = isCompare ? $('#' + this.inputCompareId).height() : $('#' + this.inputId).height();
     var clientWidth = parseInt($(document.body)[0].clientWidth);
     var left = pos.left;
-    $("#" + this.calendarId).css('display', 'block');
+    $("#" + this.calendarId).show();
     if (true == this.mOpts.singleCompare || true == this.mOpts.isSingleDay) {
         $('#' + this.endDateId).css('display', 'none');
 		$('#' + this.endCompareDateId).css('display','none');
@@ -1039,9 +1044,10 @@ pickerDateRange.prototype.show = function(isCompare, __method) {
         left = pos.left + $('#' + this.inputId).width() - $("#" + this.calendarId).width() + ((/msie/i.test(navigator.userAgent) && !(/opera/i.test(navigator.userAgent)))? 5 : 0) ;
 		__method.mOpts.theme=='ta' && (left += 50);
 	}
-    $("#" + this.calendarId).css({'left': left+16  + 'px','right':'16px'});
+    $("#" + this.calendarId).css({'left': left  + 'px','right':0});
     //$("#" + this.calendarId).css('top', pos.top + (offsetHeight ? offsetHeight- 1 : (__method.mOpts.theme=='ta'?35:22)) + 'px');
-    $("#" + this.calendarId).css('top', pos.top + (__method.mOpts.theme=='ta'?85:22) + 'px');
+    // $("#" + this.calendarId).css('top', pos.top + (__method.mOpts.theme=='ta'?85:22) + 'px');
+    $("#" + this.calendarId).css('bottom', 10 + 'px');
 	// $("#" + this.calendarId).css('padding', pos.top + (__method.mOpts.theme=='ta'?85:22) + 'px');
 	//第一次显示的时候，一定要初始化输入框
 	isCompare ? this.changeInput(this.startCompareDateId) : this.changeInput(this.startDateId);
@@ -1177,6 +1183,7 @@ pickerDateRange.prototype.fillDate = function(year, month, index) {
     var yToday = today.getFullYear();
 	
 	var table = document.createElement('table');
+    $(table).attr('border',0).attr('cellspacing',0).attr('cellpadding',0);
 	if(isTaTheme){
 		table.className = this.mOpts.dateTable;
 
@@ -1342,7 +1349,7 @@ pickerDateRange.prototype.fillDate = function(year, month, index) {
         }
 
         td = document.createElement('td');
-        td.innerHTML = d.getDate();
+        td.innerHTML = '<span class="dateTdSpan">'+d.getDate()+'</span>';
         if('' != tdClass) {
             $(td).attr('class', tdClass);
         }

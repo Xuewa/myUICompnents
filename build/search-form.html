@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/weui.css">
     <link rel="stylesheet" href="styles/jquery-weui.css">
     <link rel="stylesheet" href="styles/dateRange.css">
+    <link rel="stylesheet" href="styles/ion.rangeSlider.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body ontouchstart>
@@ -75,17 +76,9 @@
         <div class="xblock-title-row">
           <h2 class="xblock-title">选择一个区间</h2>
         </div>
-        <div id="slider1" class="weui-slider-box">
-          <div class="weui-slider">
-            <div id="sliderInner" class="weui-slider__inner">
-              <div id="sliderTrack" style="width: 75%;" class="weui-slider__track"></div>
-              <div id="sliderHandler" style="left: 75%;" class="weui-slider__handler"></div>
-              <div id="sliderTrack2" style="width: 75%;" class="weui-slider__track2"></div>
-              <div id="sliderHandler2" style="left: 75%;" class="weui-slider__handler2"></div>
-            </div>
-          </div>
+        <div class="xblock-slider travel-days">
+          <input type="text" class="range-sel">
         </div>
-        <div id="sliderValue" class="weui-slider-box__value">75</div>
       </div>
       <div class="xblock-search-history-block">
         <div class="xblock-title-row">
@@ -103,6 +96,7 @@
     <script type="text/javascript" src="js/libs/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="js/libs/dateRange.js"></script>
     <script type="text/javascript" src="js/libs/jquery-weui.js"></script>
+    <script type="text/javascript" src="js/libs/ion.rangeSlider.min.js"></script>
     <script type="text/javascript" src="js/my.js"></script>
   </body>
 </html>
