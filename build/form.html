@@ -12,14 +12,14 @@
   </head>
   <body ontouchstart>
     <header class="nav-bar">
-      <div class="nav-left"> <a id="back-lin" class="back_xbtn"><img src="images/icons/20x36/back.png" alt="" width="10" height="18" class="icon_back"><font class="back-font">返回</font></a></div>
+      <div class="nav-left"> <a id="back-lin" class="back_xbtn"><img src="images/icons/left_arr.png" alt="" width="10" height="18" class="icon_back"><font class="back-font">返回</font></a></div>
       <h1 class="nav-title">表单填写</h1>
-      <div id="dropdown" class="nav-right"><a href="javascript:void(0);" class="nav-more"><img src="images/icons/44x44/dots.png" alt="" width="22" height="22" class="icon_dots"></a>
+      <div id="dropdown" class="nav-right"><a href="#" style="margin-right:12px" class="nav-icon"><img src="images/icons/icon.png" alt="" width="22" height="22" class="icon_first"></a><a href="javascript:void(0);" class="nav-more"><img src="images/icons/dots.png" alt="" width="22" height="22" class="icon_dots"></a>
         <div class="dropdown_mask"></div>
         <div class="nav-more-list"><span class="arrow"></span>
           <ul class="nav-item-list">
-            <li class="nav-item"><a href="#" class="nav-item-link"><img src="" width="18" height="18" class="nav-link-img"><font>本页功能一</font></a></li>
-            <li class="nav-item"><a href="#" class="nav-item-link"><img class="nav-link-img"><font>本页功能二</font></a></li>
+            <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/add_cir.png" width="20" height="20" class="nav-link-img"><font>本页功能一</font></a></li>
+            <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/clock.png" width="20" height="20" class="nav-link-img"><font>本页功能二</font></a></li>
           </ul>
         </div>
       </div>
@@ -27,7 +27,7 @@
     <div class="header_masker"></div>
     <div class="main">
       <div class="page-tip">
-        <p>针对该页面重要的提示信息</p><a class="close_xbtn"><img width="22" height="22" class="xbtn_img"></a>
+        <p>针对该页面重要的提示信息</p><a class="close_xbtn"><img width="22" height="22" src="images/icons/close_grey.png" class="xbtn_img"></a>
       </div>
       <div class="xblock form-xblock">
         <div class="xblock-title-row">
@@ -41,7 +41,7 @@
               </div>
               <div class="xblock-row-right weui-cell__bd">
                 <input type="number" pattern="[0-9]*" placeholder="请输入数字(必填)..." class="weui-input">
-              </div><a href="javascript:void(0);" class="xbtn_close"><img src="" width="22" height="22" class="close_xbtn"></a>
+              </div><a href="javascript:void(0);" class="xbtn_close"><img src="images/icons/close_cir.png" width="22" height="22" class="close_xbtn"></a>
             </div>
           </li>
           <li data-initXbtn="tip" class="xblock-row xblock-row-err">
@@ -51,7 +51,7 @@
               </div>
               <div class="xblock-row-right weui-cell__bd">
                 <input type="number" pattern="[0-9]*" placeholder="请输入数字(必填)..." class="weui-input">
-              </div><a href="javascript:void(0);" class="xbtn_tip"><img src="" width="22" height="22" class="ques_xbtn">
+              </div><a href="javascript:void(0);" class="xbtn_tip"><img src="images/icons/ques.png" width="22" height="22" class="ques_xbtn">
                 <div class="tip-cont"><span class="tip-arrow"></span>
                   <p class="tip-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facilis accusamus maiores esse earum? Possimus vel natus ut esse illum tempore, quae iusto atque! Odio saepe, voluptatem reiciendis qui ut?</p>
                 </div></a>
@@ -62,7 +62,7 @@
               <div class="xblock-row-left weui-cell__hd">
                 <label class="weui-label">多选</label>
               </div>
-              <div class="xblock-row-right weui-cell__bd"><font name="checkbox1" data-type="checkValsText" data-tip="可选择多个选项" class="xblock-row-placeholder">可选择多个选项</font></div><a href="javascript:void(0);" class="xbtn_link"><img src="" width="22" height="22" class="next_xbtn"></a>
+              <div class="xblock-row-right weui-cell__bd"><font name="checkbox1" data-type="checkValsText" data-tip="可选择多个选项" class="xblock-row-placeholder">可选择多个选项</font></div><a href="javascript:void(0);" class="xbtn_link"><img src="images/icons/right_arr.png" width="22" height="22" class="next_xbtn"></a>
             </div>
           </li>
           <li data-link="form-single-select.html" class="xblock-row xblock-link-row">
@@ -70,7 +70,7 @@
               <div class="xblock-row-left weui-cell__hd">
                 <label class="weui-label">单选</label>
               </div>
-              <div class="xblock-row-right weui-cell__bd"><font name="radio1" data-type="radioValText" data-tip="请选择一个选项" class="xblock-row-placeholder">请选择一个选项</font></div><a href="javascript:void(0);" class="xbtn_link"><img src="" width="22" height="22" class="next_xbtn"></a>
+              <div class="xblock-row-right weui-cell__bd"><font name="radio1" data-type="radioValText" data-tip="请选择一个选项" class="xblock-row-placeholder">请选择一个选项</font></div><a href="javascript:void(0);" class="xbtn_link"><img src="images/icons/right_arr.png" width="22" height="22" class="next_xbtn"></a>
             </div>
           </li>
           <li class="xblock-row">
@@ -110,7 +110,7 @@
               <div class="xblock-row-left weui-cell__hd">
                 <label class="weui-label">状态显示</label>
               </div>
-              <div class="xblock-row-right weui-cell__bd"></div><a href="#" class="xbtn_link"> <font class="status_text">状态</font><img src="" width="22" height="22" class="next_xbtn"></a>
+              <div class="xblock-row-right weui-cell__bd"></div><a href="#" class="xbtn_link"> <font class="status_text">状态</font><img src="images/icons/right_arr.png" width="22" height="22" class="next_xbtn"></a>
             </div>
           </li>
         </ul>
@@ -143,7 +143,7 @@
               <div class="xblock-row-left weui-cell__hd">
                 <label class="weui-label">新的消息</label>
               </div>
-              <div class="xblock-row-right weui-cell__bd"><a href="#" class="xbtn_link"><span class="red_point"></span><img src="" width="22" height="22" class="next_xbtn"></a></div>
+              <div class="xblock-row-right weui-cell__bd"><a href="#" class="xbtn_link"><span class="red_point"></span><img src="images/icons/right_arr.png" width="22" height="22" class="next_xbtn"></a></div>
             </div>
           </li>
         </ul>

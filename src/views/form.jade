@@ -4,23 +4,25 @@ block content
   header.nav-bar
     div.nav-left 
       a#back-lin.back_xbtn
-        img.icon_back(src='images/icons/20x36/back.png',alt='',width='10',height='18')
+        img.icon_back(src='images/icons/left_arr.png',alt='',width='10',height='18')
         font.back-font 返回
     h1.nav-title 表单填写
     div.nav-right#dropdown
+      a.nav-icon(href='#',style='margin-right:12px')
+        img.icon_first(src='images/icons/icon.png',alt='',width='22',height='22')
       a.nav-more(href='javascript:void(0);')
-        img.icon_dots(src='images/icons/44x44/dots.png',alt='',width='22',height='22')
+        img.icon_dots(src='images/icons/dots.png',alt='',width='22',height='22')
       div.dropdown_mask
       div.nav-more-list
         span.arrow
         ul.nav-item-list
           li.nav-item
             a.nav-item-link(href='#')
-              img.nav-link-img(src='',width='18',height='18')
+              img.nav-link-img(src='images/icons/add_cir.png',width='20',height='20')
               font 本页功能一
           li.nav-item
             a.nav-item-link(href='#')
-              img.nav-link-img
+              img.nav-link-img(src='images/icons/clock.png',width='20',height='20')
               font 本页功能二
   div.header_masker
 
@@ -28,7 +30,7 @@ block content
     div.page-tip
       p 针对该页面重要的提示信息
       a.close_xbtn
-        img.xbtn_img(width='22',height='22')
+        img.xbtn_img(width='22',height='22',src='images/icons/close_grey.png')
 
     div.xblock.form-xblock
       div.xblock-title-row
@@ -41,7 +43,7 @@ block content
             div.xblock-row-right.weui-cell__bd
               input.weui-input(type="number",pattern="[0-9]*",placeholder="请输入数字(必填)...")
             a.xbtn_close(href='javascript:void(0);')
-              img.close_xbtn(src='',width='22',height='22')
+              img.close_xbtn(src='images/icons/close_cir.png',width='22',height='22')
         li.xblock-row.xblock-row-err(data-initXbtn='tip')
           div.xblock-inner-row.weui-cell
             div.xblock-row-left.weui-cell__hd
@@ -49,7 +51,7 @@ block content
             div.xblock-row-right.weui-cell__bd
               input.weui-input(type="number",pattern="[0-9]*",placeholder="请输入数字(必填)...")
             a.xbtn_tip(href='javascript:void(0);')
-              img.ques_xbtn(src='',width='22',height='22')
+              img.ques_xbtn(src='images/icons/ques.png',width='22',height='22')
               div.tip-cont
                 span.tip-arrow
                 p.tip-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facilis accusamus maiores esse earum? Possimus vel natus ut esse illum tempore, quae iusto atque! Odio saepe, voluptatem reiciendis qui ut?
@@ -60,7 +62,7 @@ block content
             div.xblock-row-right.weui-cell__bd
               font.xblock-row-placeholder(name='checkbox1',data-type='checkValsText',data-tip='可选择多个选项') 可选择多个选项
             a.xbtn_link(href='javascript:void(0);')
-              img.next_xbtn(src='',width='22',height='22')
+              img.next_xbtn(src='images/icons/right_arr.png',width='22',height='22')
         li.xblock-row.xblock-link-row(data-link='form-single-select.html')
           div.xblock-inner-row.weui-cell
             div.xblock-row-left.weui-cell__hd
@@ -68,7 +70,7 @@ block content
             div.xblock-row-right.weui-cell__bd
               font.xblock-row-placeholder(name='radio1',data-type='radioValText',data-tip='请选择一个选项') 请选择一个选项
             a.xbtn_link(href='javascript:void(0);')
-              img.next_xbtn(src='',width='22',height='22')
+              img.next_xbtn(src='images/icons/right_arr.png',width='22',height='22')
         li.xblock-row
           div.xblock-inner-row.weui-cell
             div.xblock-row-left.weui-cell__hd
@@ -103,7 +105,7 @@ block content
             div.xblock-row-right.weui-cell__bd
             a.xbtn_link(href='#') 
               font.status_text 状态
-              img.next_xbtn(src='',width='22',height='22')
+              img.next_xbtn(src='images/icons/right_arr.png',width='22',height='22')
 
     div.xblock.form-xblock
       div.xblock-title-row
@@ -128,7 +130,7 @@ block content
             div.xblock-row-right.weui-cell__bd
               a.xbtn_link(href='#')
                 span.red_point
-                img.next_xbtn(src='',width='22',height='22')
+                img.next_xbtn(src='images/icons/right_arr.png',width='22',height='22')
 
     div.xblock.form-xblock
       div.xblock-title-row

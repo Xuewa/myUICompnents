@@ -1,0 +1,136 @@
+extends layout
+//- head  
+append style
+  //- link(href="styles/bootstrap.min.css", rel="stylesheet") 
+  //- link(rel="stylesheet", href="styles/etravel.css")
+  //if lt IE 9
+    script(src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js")  
+    script(src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js")
+block content
+  header.nav-bar
+    div.nav-left 
+      a#back-lin.back_xbtn
+        img.icon_back(src='images/icons/left_arr.png',alt='',width='10',height='18')
+        font.back-font 返回
+    h1.nav-title 切换展示页面
+    div.nav-right#dropdown
+      a.nav-icon(href='#',style='margin-right:12px')
+        img.icon_first(src='images/icons/icon.png',alt='',width='22',height='22')
+      a.nav-more(href='javascript:void(0);')
+        img.icon_dots(src='images/icons/dots.png',alt='',width='22',height='22')
+      div.dropdown_mask
+      div.nav-more-list
+        span.arrow
+        ul.nav-item-list
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img(src='images/icons/add_cir.png',width='20',height='20')
+              font 本页功能一
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img(src='images/icons/clock.png',width='20',height='20')
+              font 本页功能二
+  div.header_masker
+  //- content
+  ul.tabs
+    li.tab.active TAB1
+    li.tab TAB2
+    li.tab TAB3
+  
+  div.xblocks
+    div.xblock.info-xblock
+      div.xblock-title-row
+        h2.xblock-title 列表及操作
+      div.xblock-content-cont
+        div.xblock-info
+          h2.info-title [自由行] 毛里求斯8天/机票/酒店/接送/威斯汀酒店/广州直航
+          p.info-subTitle 赠送三天当地玩乐，比邻国家海洋公园！(次要内容)
+          ul.spans
+            li
+              span
+                label 标题1:
+                font 内容1
+            li
+              span
+                label 标题2:
+                font 内容2
+          ul.labels.st1
+            li.label.green 积极状态
+            li.label.red 消极状态
+            li.label.grey 其它状态
+          ul.labels.st2
+            li.label.green 积极状态
+            li.label.red 消极状态
+            li.label.grey 其它状态
+          ul.labels.st3
+            li.label.green 积极状态
+            li.label.red 消极状态
+            li.label.grey 其它状态
+        ul.operates
+          li.operate
+            a 
+              span 操作1
+          li.operate
+            a
+              span 操作2
+          li.operate
+            a
+              span 操作3
+        ul.operates
+          li.operate
+            a
+              span 操作1
+          li.operate
+            a
+              span 操作2
+        div.more_btn 
+          a 查看更多
+        div.show_btn 
+          a 展开
+
+append script
+  script(src="js/libs/jquery.min.js")
+  //- script(src="js/libs/plugins.js")
+  //- script(src="js/libs/etravel.js")
+  //- script.
+  //-   $(function () {
+  //-   FastClick.attach(document.body);
+  //-   //
+  //-   $(window).on("scroll",function(){
+  //-   var scrollT = $(window).scrollTop();
+  //-   var scrollH = $(".stroke-con").offset().top - 145;
+  //-   if(scrollT>scrollH){
+  //-   $(".tab-info").addClass("fixed");
+  //-   $(".stroke-con").css("padding-top","48px")
+  //-   }else{
+  //-   $(".tab-info").removeClass("fixed");
+  //-   $(".stroke-con").css("padding-top","0")
+  //-   }
+  //-   $(".tab-index").each(function(i){
+  //-   var windowH = $(window).height(); // 窗口高度
+  //-   var scrollT = $(window).scrollTop(); // 滚动条高度
+  //-   var documentH = $(document).height(); // 内容高度
+  //-   var tab_index = $(".tab-index");
+  //-   var s_start = tab_index.eq(i).offset().top - 145;
+  //-   if(s_start <= scrollT ){
+  //-   $(".tab-info div").eq(i).addClass("active").siblings().removeClass("active");
+  //-   }else if(windowH+scrollT >= documentH){
+  //-   $(".tab-info div").eq(i).addClass("active").siblings().removeClass("active");
+  //-   }
+  //-   });
+  //-   });
+  //-   $(".tab-info div").on("click",function(){
+  //-   var index_num = $(".tab-info div").index($(this));
+  //-   $("body,html").animate({scrollTop:$(".tab-index").eq(index_num).offset().top - (index_num==0?97:145)},300)
+  //-   });
+  //-   // 下拉
+  //-   $(".dropdown-group a").on("click",function(){
+  //-   var con = $(this).parent().find(".dropdown-con");
+  //-   $(".dropdown-con").slideUp(150);
+  //-   if(con.is(":hidden")){
+  //-   con.slideDown(150);
+  //-   }else{
+  //-   con.slideUp(150);
+  //-   }
+  //-   })
+  //-   })

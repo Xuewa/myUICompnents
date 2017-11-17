@@ -230,7 +230,7 @@ $('.xblock-search-add-row .add-search').on('click',function(){
   var $newLiStr = '<li class="xblock-row">'+
             '<div class="xblock-inner-row weui-cell">'+
               '<div class="xblock-search-row-left weui-cell__hd"><span class="num-decrease icon-decrease_circle"></span>'+
-                '<label class="weui-label search-row-label"></label><a href="javascript:void(0);" class="next_xbtn"><img src="" width="22" height="22" class="right_xbtn"></a>'+
+                '<label class="weui-label search-row-label"></label><a href="javascript:void(0);" class="next_xbtn"><img src="images/icons/right_arr.png" width="22" height="22" class="right_xbtn"></a>'+
               '</div>'+
               '<div class="xblock-search-row-right weui-cell__bd">'+
                 '<input  class="weui-input">'+
