@@ -26,17 +26,69 @@ block content
 
   div.main
     div.weui-cells.weui-cells_checkbox.xblock
-        label.weui-cell.weui-check__label.xblock-select-row(for="s11")
-          span.weui-cell__hd
-            input.weui-check#s11(type="checkbox",name="checkbox1")
-            i.weui-icon-checked
-          span.weui-cell__bd.checkbox-text
-            font 多选选项1
-        label.weui-cell.weui-check__label.xblock-select-row(for="s12")
-          span.weui-cell__hd
-            input.weui-check#s12(type="checkbox",name="checkbox1")
-            i.weui-icon-checked
-          span.weui-cell__bd.checkbox-text
-            font 多选选项2
-          span.checkbox-tip
-            font 针对该选项的说明文字
+      label.weui-cell.weui-check__label.xblock-select-row(for="s11")
+        span.weui-cell__hd
+          input.weui-check#s11(type="checkbox",name="checkbox1")
+          i.weui-icon-checked
+        span.weui-cell__bd.checkbox-text
+          font 多选选项1
+      label.weui-cell.weui-check__label.xblock-select-row(for="s12")
+        span.weui-cell__hd
+          input.weui-check#s12(type="checkbox",name="checkbox1")
+          i.weui-icon-checked
+        span.weui-cell__bd.checkbox-text
+          font 多选选项2
+        span.checkbox-tip
+          font 针对该选项的说明文字
+
+    div.weui-cells.weui-cells_checkbox.xblock.slide-info2-list
+      label.weui-cell.weui-check__label.slide-info2-item(for="s21",style='padding:0;')
+        span.weui-cell__hd(style='padding-left:16px;')
+          input.weui-check#s21(type="checkbox",name="checkbox1")
+          i.weui-icon-checked
+        span.weui-cell__bd.checkbox-text
+          div.slide-item-flex(style='padding-left:0;')
+            h2.slide-info2-title 澳门观光塔 空中漫步Skywalk【赠观光塔门票】
+            ul.info-list
+              li.info-item
+                label 订单号：
+                span GZLGZ0GD4SK1703310701
+              li.info-item
+                ul.info-inner-list
+                  li
+                    label 日期：
+                    span 2016/08/09
+                  li
+                    label 计划：
+                    span 74
+              li.info-item
+                label 已收：
+                span 71 (成人7+小孩2+婴儿1)
+              li.info-item
+                span.status 已截止
+      label.weui-cell.weui-check__label.slide-info2-item(for="s22",style='padding:0;')
+        span.weui-cell__hd(style='padding-left:16px;')
+          input.weui-check#s22(type="checkbox",name="checkbox1")
+          i.weui-icon-checked
+        span.weui-cell__bd.checkbox-text
+          div.slide-item-flex(style='padding-left:0;')
+            h2.slide-info2-title 澳门观光塔 空中漫步Skywalk【赠观光塔门票】
+            ul.info-list
+              li.info-item
+                label 订单号：
+                span GZLGZ0GD4SK1703310701
+              li.info-item
+                ul.info-inner-list
+                  li
+                    label 日期：
+                    span 2016/08/09
+                  li
+                    label 计划：
+                    span 74
+              li.info-item
+                label 已收：
+                span 71 (成人7+小孩2+婴儿1)
+              li.info-item
+                span.status 已截止
+append script
+  script(src="js/form.js")

@@ -14,27 +14,138 @@
     <link rel="stylesheet" href="styles/ion.rangeSlider.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body ontouchstart>
-    <header class="nav-bar">
-      <div class="nav-left"> <a id="back-lin" class="back_xbtn"><img src="images/icons/left_arr.png" alt="" width="10" height="18" class="icon_back"><font class="back-font">返回</font></a></div>
-      <h1 class="nav-title">切换展示页面</h1>
-      <div id="dropdown" class="nav-right"><a href="#" style="margin-right:12px" class="nav-icon"><img src="images/icons/icon.png" alt="" width="22" height="22" class="icon_first"></a><a href="javascript:void(0);" class="nav-more"><img src="images/icons/dots.png" alt="" width="22" height="22" class="icon_dots"></a>
-        <div class="dropdown_mask"></div>
-        <div class="nav-more-list"><span class="arrow"></span>
-          <ul class="nav-item-list">
-            <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/add_cir.png" width="20" height="20" class="nav-link-img"><font>本页功能一</font></a></li>
-            <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/clock.png" width="20" height="20" class="nav-link-img"><font>本页功能二</font></a></li>
-          </ul>
-        </div>
+  <body ontouchstart></body>
+  <header class="nav-bar">
+    <div class="nav-left"> <a id="back-lin" class="back_xbtn"><img src="images/icons/left_arr.png" alt="" width="10" height="18" class="icon_back"><font class="back-font">返回</font></a></div>
+    <h1 class="nav-title">切换展示页面</h1>
+    <div id="dropdown" class="nav-right"><a href="#" style="margin-right:12px" class="nav-icon"><img src="images/icons/icon.png" alt="" width="22" height="22" class="icon_first"></a><a href="javascript:void(0);" class="nav-more"><img src="images/icons/dots.png" alt="" width="22" height="22" class="icon_dots"></a>
+      <div class="dropdown_mask"></div>
+      <div class="nav-more-list"><span class="arrow"></span>
+        <ul class="nav-item-list">
+          <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/add_cir.png" width="20" height="20" class="nav-link-img"><font>本页功能一</font></a></li>
+          <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/clock.png" width="20" height="20" class="nav-link-img"><font>本页功能二</font></a></li>
+        </ul>
       </div>
-    </header>
-    <div class="header_masker"></div>
+    </div>
+  </header>
+  <div class="header_masker"></div>
+  <div class="tabs_cont">
     <ul class="tabs">
       <li class="tab active">TAB1</li>
       <li class="tab">TAB2</li>
       <li class="tab">TAB3</li>
     </ul>
-    <div class="xblocks">
+  </div>
+  <ul class="xblocks">
+    <li class="xblock-item">
+      <div class="xblock info-xblock">
+        <div class="xblock-title-row">
+          <h2 class="xblock-title">列表及操作</h2>
+        </div>
+        <div class="xblock-content-cont">
+          <div class="xblock-info">
+            <h2 class="info-title">[自由行1] 毛里求斯8天/机票/酒店/接送/威斯汀酒店/广州直航</h2>
+            <p class="info-subTitle">赠送三天当地玩乐，比邻国家海洋公园！(次要内容)</p>
+            <ul class="spans">
+              <li><span>
+                  <label>标题1:</label><font>内容1</font></span></li>
+              <li><span>
+                  <label>标题2:</label><font>内容2</font></span></li>
+            </ul>
+            <ul class="labels st1">
+              <li class="label green">积极状态</li>
+              <li class="label red">消极状态</li>
+              <li class="label grey">其它状态</li>
+            </ul>
+            <ul class="labels st2">
+              <li class="label green">积极状态</li>
+              <li class="label red">消极状态</li>
+              <li class="label grey">其它状态</li>
+            </ul>
+            <ul style="display:none;" class="labels st3">
+              <li class="label green">积极状态</li>
+              <li class="label red">消极状态</li>
+              <li class="label grey">其它状态</li>
+            </ul>
+          </div>
+          <ul class="operates">
+            <li class="operate"><a> <span>操作1</span></a></li>
+            <li class="operate"><a><span>操作2</span></a></li>
+            <li class="operate"><a><span>操作3</span></a></li>
+          </ul>
+          <ul class="operates">
+            <li class="operate"><a><span>操作1</span></a></li>
+            <li class="operate"><a><span>操作2</span></a></li>
+          </ul>
+          <div class="more_btn"> <a>查看更多</a></div>
+          <div class="show_btn"> <a>展开</a></div>
+        </div>
+      </div>
+      <div class="xblock info-xblock">
+        <div class="xblock-content-cont">
+          <h3 class="info-title">白底大标题</h3>
+          <ul class="imgs-list">
+            <li><img src="images/img.png"></li>
+            <li><img src="images/img.png"></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li style="display:none" class="xblock-item">
+      <div class="xblock info-xblock">
+        <div class="xblock-title-row">
+          <h2 class="xblock-title">列表及操作</h2>
+        </div>
+        <div class="xblock-content-cont">
+          <div class="xblock-info">
+            <h2 class="info-title">[自由行2] 毛里求斯8天/机票/酒店/接送/威斯汀酒店/广州直航</h2>
+            <p class="info-subTitle">赠送三天当地玩乐，比邻国家海洋公园！(次要内容)</p>
+            <ul class="spans">
+              <li><span>
+                  <label>标题1:</label><font>内容1</font></span></li>
+              <li><span>
+                  <label>标题2:</label><font>内容2</font></span></li>
+            </ul>
+            <ul class="labels st1">
+              <li class="label green">积极状态</li>
+              <li class="label red">消极状态</li>
+              <li class="label grey">其它状态</li>
+            </ul>
+            <ul class="labels st2">
+              <li class="label green">积极状态</li>
+              <li class="label red">消极状态</li>
+              <li class="label grey">其它状态</li>
+            </ul>
+            <ul class="labels st3">
+              <li class="label green">积极状态</li>
+              <li class="label red">消极状态</li>
+              <li class="label grey">其它状态</li>
+            </ul>
+          </div>
+          <ul class="operates">
+            <li class="operate"><a> <span>操作1</span></a></li>
+            <li class="operate"><a><span>操作2</span></a></li>
+            <li class="operate"><a><span>操作3</span></a></li>
+          </ul>
+          <ul class="operates">
+            <li class="operate"><a><span>操作1</span></a></li>
+            <li class="operate"><a><span>操作2</span></a></li>
+          </ul>
+          <div class="more_btn"> <a>查看更多</a></div>
+          <div class="show_btn"> <a>展开</a></div>
+        </div>
+      </div>
+      <div class="xblock info-xblock">
+        <div class="xblock-content-cont">
+          <h3 class="info-title">白底大标题</h3>
+          <ul class="imgs-list">
+            <li><img src="images/img.png"></li>
+            <li><img src="images/img.png"></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li style="display:none" class="xblock-item">
       <div class="xblock info-xblock">
         <div class="xblock-title-row">
           <h2 class="xblock-title">列表及操作</h2>
@@ -78,13 +189,21 @@
           <div class="show_btn"> <a>展开</a></div>
         </div>
       </div>
-    </div>
-    <script src="js/libs/jquery.min.js"></script>
-    <script type="text/javascript" src="js/libs/fastclick.js"></script>
-    <script type="text/javascript" src="js/libs/jquery-2.1.4.js"></script>
-    <script type="text/javascript" src="js/libs/dateRange.js"></script>
-    <script type="text/javascript" src="js/libs/jquery-weui.js"></script>
-    <script type="text/javascript" src="js/libs/ion.rangeSlider.min.js"></script>
-    <script type="text/javascript" src="js/my.js"></script>
-  </body>
+      <div class="xblock info-xblock">
+        <div class="xblock-content-cont">
+          <h3 class="info-title">白底大标题</h3>
+          <ul class="imgs-list">
+            <li><img src="images/img.png"></li>
+            <li><img src="images/img.png"></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <script type="text/javascript" src="js/libs/fastclick.js"></script>
+  <script type="text/javascript" src="js/libs/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="js/libs/jquery-weui.js"></script>
+  <script type="text/javascript" src="js/header.js"></script>
+  <script src="js/libs/jquery.min.js"></script>
+  <script src="js/tabs.js"></script>
 </html>

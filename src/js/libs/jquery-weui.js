@@ -3480,7 +3480,7 @@ if (typeof define === 'function' && define.amd) {
   
   var show = function(html, className) {
     className = className || "";
-    var mask = $("<div class='weui-mask_transparent'></div>").appendTo(document.body);
+    var mask = $("<div class='weui-mask weui-mask--visible'></div>").appendTo(document.body);
 
     var tpl = '<div class="weui-toast ' + className + '">' + html + '</div>';
     var dialog = $(tpl).appendTo(document.body);
@@ -3490,7 +3490,7 @@ if (typeof define === 'function' && define.amd) {
   };
 
   var hide = function(callback) {
-    $(".weui-mask_transparent").remove();
+    $(".weui-mask.weui-mask--visible").remove();
     $(".weui-toast--visible").removeClass("weui-toast--visible").transitionEnd(function() {
       var $this = $(this);
       $this.remove();
@@ -3502,7 +3502,8 @@ if (typeof define === 'function' && define.amd) {
     if(typeof style === "function") {
       callback = style;
     }
-    var className, iconClassName = 'weui-icon-success-no-circle';
+    // var className, iconClassName = 'weui-icon-success-no-circle';
+    var className, iconClassName = 'weui-icon-success-circle';
     var duration = toastDefaults.duration;
     if(style == "cancel") {
       className = "weui-toast_cancel";
@@ -3515,7 +3516,8 @@ if (typeof define === 'function' && define.amd) {
     } else if(typeof style === typeof 1) {
       duration = style
     }
-    show('<i class="' + iconClassName + ' weui-icon_toast"></i><p class="weui-toast_content">' + (text || "已经完成") + '</p>', className);
+    show('<i class="' + iconClassName + ' weui-icon_toast"></i>' +
+      '<p class="weui-toast_content">' + (text || "已经完成") + '</p>', className);
 
     setTimeout(function() {
       hide(callback);

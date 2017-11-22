@@ -264,74 +264,37 @@ $('.clear-history').on('click',function(){
 	$(this).parent().hide();
 });
 
-//-----左滑动
-var startX = 0,startY = 0;
-var moveEndX = 0,moveEndY = 0;
-var areaX = 0,areaY = 0;
-$(".slide-info-item").on("touchstart", function(e) {
-    // 判断默认行为是否可以被禁用
-    if (e.cancelable) {
-        // 判断默认行为是否已经被禁用
-        if (!e.defaultPrevented) {
-            e.preventDefault();
-        }
-    }   
-    startX = e.originalEvent.changedTouches[0].pageX,
-    startY = e.originalEvent.changedTouches[0].pageY;
-});
-$(".slide-info-item").on("touchend", function(e) {         
-    // 判断默认行为是否可以被禁用
-    if (e.cancelable) {
-        // 判断默认行为是否已经被禁用
-        if (!e.defaultPrevented) {
-            e.preventDefault();
-        }
-    }               
-    moveEndX = e.originalEvent.changedTouches[0].pageX,
-    moveEndY = e.originalEvent.changedTouches[0].pageY,
-    areaX = moveEndX - startX,
-    areaY = moveEndY - startY;
 
-    if ( areaX <-100 ) {//左滑 
-        $(this).animate({'left':'-90px'});
-        // console.log(moveEndX+' - '+startX);
-    }else if ( areaX > 100 ) {//右滑
-        $(this).animate({'left':'0px'});  
-    }else if ( areaY > 0) {//下滑
-    }else if ( areaY < 0 ) {//上滑  
-    }else{//单击
-    }
-});
 
 
 //--------------------调用
 //-----滚动选择
 $("#tourist-select").picker({
-        title: "请选择出行人数",
-        cols: [
-          {
-            textAlign: 'center',
-            values: ['00 成人', '01 成人', '02 成人', '03 成人','04 成人','05 成人']
-          },
-          {
-            textAlign: 'center',
-            values: ['00 小孩', '01 小孩', '02 小孩', '03 小孩','04 小孩','05 小孩']
-          },
-          {
-            textAlign: 'center',
-            values: ['00 婴儿', '01 婴儿', '02 婴儿', '03 婴儿','04 婴儿','05 婴儿']
-          },
-        ],
-        onClose: function(p) {
-          // console.log(p.cols);
-          var cols = p.cols;
-          var values=[];
-          for (var i=0;i<=cols.length-1;i++) {
-          	values.push(cols[i].displayValue);
-          }
-          $("#tourist-select").text(values.join(' / ')).addClass('xblock-selectVal-text');
-        }
-      });
+  title: "请选择出行人数",
+  cols: [
+    {
+      textAlign: 'center',
+      values: ['00 成人', '01 成人', '02 成人', '03 成人','04 成人','05 成人']
+    },
+    {
+      textAlign: 'center',
+      values: ['00 小孩', '01 小孩', '02 小孩', '03 小孩','04 小孩','05 小孩']
+    },
+    {
+      textAlign: 'center',
+      values: ['00 婴儿', '01 婴儿', '02 婴儿', '03 婴儿','04 婴儿','05 婴儿']
+    },
+  ],
+  onClose: function(p) {
+    // console.log(p.cols);
+    var cols = p.cols;
+    var values=[];
+    for (var i=0;i<=cols.length-1;i++) {
+    	values.push(cols[i].displayValue);
+    }
+    $("#tourist-select").text(values.join(' / ')).addClass('xblock-selectVal-text');
+  }
+});
 
 
 //-----日历控件
@@ -373,7 +336,34 @@ $(".range-sel").ionRangeSlider({
 $('.irs-slider').on('touchstart',function(){
   $('.irs-single').addClass('active');
 })
+//-----tab
+$('.tab').on('click', function(){
+  var index = $(this).index();
+  $(this).siblings().removeClass('active');
+  $(this).addClass('active');
+  $('.xblock-item:eq(' + index + ')').show().siblings().hide();
+})
+// show_more
+$('.more_btn').on('click',function(){
+  $('.st3').toggle();
+  $(this).find('a').text('查看更多');
+  if($('.st3').is(':visible'))
+    $(this).find('a').text('收起');
+})
+$('.show_btn').on('click',function(){
+  $('.st3').toggle();
+  $(this).find('a').text('展开');
+  if($('.st3').is(':visible'))
+    $(this).find('a').text('收起');
+})
+// 滚动
+$(window).on('scroll',function() {
+  var tabTop = $('.tabs').offset().top;
+  var scrollTop = $(this).scrollTop();
+  if (scrollTop > tabTop-10) {
+    $('.tabs').addClass('fixed_tabs');
+  }
 
-
+})
 
 })($);

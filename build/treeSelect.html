@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>主页面</title>
+    <!--if lt IE 9
+    script(src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js")  
+    script(src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js")
+    -->
+    <script src="js/libs/vue.js"></script>
+    <link rel="stylesheet" href="styles/weui.css">
+    <link rel="stylesheet" href="styles/jquery-weui.css">
+    <link rel="stylesheet" href="styles/dateRange.css">
+    <link rel="stylesheet" href="styles/ion.rangeSlider.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body ontouchstart></body>
+  <header class="nav-bar">
+    <div class="nav-left"> <a id="back-lin" class="back_xbtn"><img src="images/icons/left_arr.png" alt="" width="10" height="18" class="icon_back"><font class="back-font">返回</font></a></div>
+    <h1 class="nav-title">产品目录</h1>
+    <div id="dropdown" class="nav-right"><a href="#" style="margin-right:12px" class="nav-icon"><img src="images/icons/icon.png" alt="" width="22" height="22" class="icon_first"></a><a href="javascript:void(0);" class="nav-more"><img src="images/icons/dots.png" alt="" width="22" height="22" class="icon_dots"></a>
+      <div class="dropdown_mask"></div>
+      <div class="nav-more-list"><span class="arrow"></span>
+        <ul class="nav-item-list">
+          <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/add_cir.png" width="20" height="20" class="nav-link-img"><font>本页功能一</font></a></li>
+          <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/clock.png" width="20" height="20" class="nav-link-img"><font>本页功能二</font></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="header_masker"></div>
+  <div class="tree_cont">
+    <div class="search_cont"><i class="search_icon"></i>
+      <input placeholder="请输入产品目录名称..." class="search_input">
+    </div>
+    <ul class="treeIndex_list">
+      <li v-for="classIndexItem in classArr" class="treeIndex_item">
+        <div class="treeIndex_tit">{{classIndexItem.name}}</div>
+        <ul class="treeIndex_content">
+          <li v-for="classItem in classIndexItem.classarr" class="treeContent_item"><i class="tree_icon"></i>
+            <input type="checkbox" hidden="true"><span class="tree_content"><span class="tree_name">{{classItem.name}}</span><span class="tree_right"><font v-if="classItem.checked" class="selected-text">全选中</font><font v-else="" class="selected-text">未选中</font><a class="next-link"></a></span></span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="fixed_nav">
+      <li class="nav_item">A</li>
+      <li class="nav_item">B</li>
+      <li class="nav_item">C</li>
+      <li class="nav_item">D</li>
+      <li class="nav_item">E</li>
+      <li class="nav_item">F</li>
+      <li class="nav_item">G</li>
+    </ul>
+    <ul class="mgr_btns">
+      <li class="sel_btn">全选</li>
+      <li class="sel_btn">反选</li>
+      <li class="sel_btn red">清空</li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="js/libs/fastclick.js"></script>
+  <script type="text/javascript" src="js/libs/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="js/libs/jquery-weui.js"></script>
+  <script type="text/javascript" src="js/header.js"></script>
+  <script src="https://unpkg.com/better-scroll@1.0.1/dist/bscroll.min.js"></script>
+  <script src="js/treeSelect.js"></script>
+</html>

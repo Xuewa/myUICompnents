@@ -243,14 +243,19 @@
 }
 .i_pre,.i_next,.ta_calendar td.ta_dateRangeSelected,.ta_calendar td.first,.ta_calendar td.last,.ta_calendar td.today{
 	/*background:url(http://imgcache.qq.com/bossweb/mta/images/calendar_all.png) no-repeat;*/
-	background:url(../images/calendar_all.png) no-repeat;
+	/*background:url(../images/icons/right_arr.png) no-repeat;*/
 	cursor:pointer;
+
 }
-.i_pre,.i_next{ width:23px; height:23px;display:inline-block; }
-.i_pre{ background-position:0 0;}
-.i_pre:hover{ background-position:-46px 0px;}
-.i_next{ background-position:-23px 0;}
-.i_next:hover{ background-position:-69px 0px;}
+.i_pre,.i_next{ width:23px; height:23px;
+    display:inline-block;
+    background-size: 22px auto; }
+.i_pre{ background-image:url(../images/icons/left_cal_arr.png);
+    background-repeat: no-repeat;}
+/*.i_pre:hover{ background-position:-46px 0px;}*/
+.i_next{ background-image:url(../images/icons/right_arr.png);
+    background-repeat: no-repeat;}
+/*.i_next:hover{ background-position:-69px 0px;}*/
 
 .ta_calendar td.ta_dateRangeSelected{
     background:#fff;

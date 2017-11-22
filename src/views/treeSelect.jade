@@ -1,0 +1,72 @@
+extends layout
+//- head  
+append style
+  //- link(href="styles/bootstrap.min.css", rel="stylesheet") 
+  //- link(rel="stylesheet", href="styles/etravel.css")
+  //if lt IE 9
+    script(src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js")  
+    script(src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js")
+  script(src="js/libs/vue.js")
+
+block content
+  header.nav-bar
+    div.nav-left 
+      a#back-lin.back_xbtn
+        img.icon_back(src='images/icons/left_arr.png',alt='',width='10',height='18')
+        font.back-font 返回
+    h1.nav-title 产品目录
+    div.nav-right#dropdown
+      a.nav-icon(href='#',style='margin-right:12px')
+        img.icon_first(src='images/icons/icon.png',alt='',width='22',height='22')
+      a.nav-more(href='javascript:void(0);')
+        img.icon_dots(src='images/icons/dots.png',alt='',width='22',height='22')
+      div.dropdown_mask
+      div.nav-more-list
+        span.arrow
+        ul.nav-item-list
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img(src='images/icons/add_cir.png',width='20',height='20')
+              font 本页功能一
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img(src='images/icons/clock.png',width='20',height='20')
+              font 本页功能二
+  div.header_masker
+  //- content
+  div.tree_cont
+    div.search_cont
+      i.search_icon
+      input.search_input(placeholder='请输入产品目录名称...')
+    ul.treeIndex_list
+      li.treeIndex_item(v-for='classIndexItem in classArr')
+        div.treeIndex_tit {{classIndexItem.name}}
+        ul.treeIndex_content
+          li.treeContent_item(v-for='classItem in classIndexItem.classarr')
+            i.tree_icon
+            input(type='checkbox',hidden='true')
+            span.tree_content
+              span.tree_name {{classItem.name}}
+              span.tree_right
+                font.selected-text(v-if='classItem.checked') 全选中
+                font.selected-text(v-else='') 未选中
+                a.next-link
+    ul.fixed_nav
+      li.nav_item A
+      li.nav_item B
+      li.nav_item C
+      li.nav_item D
+      li.nav_item E
+      li.nav_item F
+      li.nav_item G
+    ul.mgr_btns
+      li.sel_btn 全选
+      li.sel_btn 反选
+      li.sel_btn.red 清空
+  
+  
+
+append script
+  //- script(src="https://cdn.jsdelivr.net/npm/vue")
+  script(src="https://unpkg.com/better-scroll@1.0.1/dist/bscroll.min.js")
+  script(src="js/treeSelect.js")

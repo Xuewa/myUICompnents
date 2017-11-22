@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>主页面</title>
+    <link rel="stylesheet" href="styles/weui.css">
+    <link rel="stylesheet" href="styles/jquery-weui.css">
+    <link rel="stylesheet" href="styles/dateRange.css">
+    <link rel="stylesheet" href="styles/ion.rangeSlider.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body ontouchstart></body>
+  <header class="nav-bar">
+    <div class="nav-left"> <a id="back-lin" class="back_xbtn"><img src="images/icons/left_arr.png" alt="" width="10" height="18" class="icon_back"><font class="back-font">返回</font></a></div>
+    <h1 class="nav-title">表单填写</h1>
+    <div id="dropdown" class="nav-right"><a href="#" style="margin-right:12px" class="nav-icon"><img src="images/icons/icon.png" alt="" width="22" height="22" class="icon_first"></a><a href="javascript:void(0);" class="nav-more"><img src="images/icons/dots.png" alt="" width="22" height="22" class="icon_dots"></a>
+      <div class="dropdown_mask"></div>
+      <div class="nav-more-list"><span class="arrow"></span>
+        <ul class="nav-item-list">
+          <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/add_cir.png" width="20" height="20" class="nav-link-img"><font>本页功能一</font></a></li>
+          <li class="nav-item"><a href="#" class="nav-item-link"><img src="images/icons/clock.png" width="20" height="20" class="nav-link-img"><font>本页功能二</font></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="header_masker"></div>
+  <div class="main">
+    <button class="primary-btn-m alert-btn">Alert</button>
+    <button class="primary-btn-m confirm-btn">comfirm</button>
+    <button class="primary-btn-m toast-btn">toast</button>
+  </div>
+  <script type="text/javascript" src="js/libs/fastclick.js"></script>
+  <script type="text/javascript" src="js/libs/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="js/libs/jquery-weui.js"></script>
+  <script type="text/javascript" src="js/header.js"></script>
+  <script type="text/javascript" src="js/form.js"></script>
+  <script>
+    $(document).on("click", ".alert-btn", function() {
+      $.alert("这是个警告框！这是个警告框这是个警告框", "警告！");
+    });
+    
+    $(document).on("click", ".confirm-btn", function() {
+      $.confirm("您确定要删除文件吗?", "确认删除?", function() {
+        $.toast("删除成功!");
+      }, function() {
+        //取消操作
+      });
+    });
+    $(document).on("click", ".toast-btn", function() {
+      $.toast("操作成功", function() {
+        console.log('close');
+      });
+    })
+  </script>
+</html>
