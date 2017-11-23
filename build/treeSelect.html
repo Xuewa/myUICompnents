@@ -30,34 +30,35 @@
     </div>
   </header>
   <div class="header_masker"></div>
-  <div class="tree_cont">
-    <div class="search_cont"><i class="search_icon"></i>
-      <input placeholder="请输入产品目录名称..." class="search_input">
-    </div>
-    <ul class="treeIndex_list">
-      <li v-for="classIndexItem in classArr" class="treeIndex_item">
-        <div class="treeIndex_tit">{{classIndexItem.name}}</div>
-        <ul class="treeIndex_content">
-          <li v-for="classItem in classIndexItem.classarr" class="treeContent_item"><i class="tree_icon"></i>
-            <input type="checkbox" hidden="true"><span class="tree_content"><span class="tree_name">{{classItem.name}}</span><span class="tree_right"><font v-if="classItem.checked" class="selected-text">全选中</font><font v-else="" class="selected-text">未选中</font><a class="next-link"></a></span></span>
+  <div class="content">
+    <div class="tree_cont">
+      <div class="tree_inner_cont">
+        <div class="search_cont"><i class="search_icon"></i>
+          <input placeholder="请输入产品目录名称..." class="search_input">
+        </div>
+        <ul class="treeIndex_list">
+          <li v-for="(classIndexItem,idx1) in classArr" class="treeIndex_item">
+            <div :ref="classIndexItem.name" class="treeIndex_tit">{{classIndexItem.name}}</div>
+            <ul class="treeIndex_content">
+              <li v-for="(classItem,idx2) in classIndexItem.classarr" class="treeContent_item">
+                <div class="treeContent_inner_item"><i v-on:click="selectItem(classItem)" :class="classItem.children&amp;&amp;classItem.children.length&gt;0?(allSelectedArr[idx1][idx2]?'all_ticked':''):(classItem.checked?'all_ticked':'')" class="tree_icon"></i>
+                  <input type="checkbox" hidden="true"><span class="tree_content"><span class="tree_name">{{classItem.name}}</span><span class="tree_right"><font v-if="allSelectedArr[idx1][idx2]" class="selected-text">全选中</font><font v-else="" class="selected-text">未选中</font><a v-if="classItem.children &amp;&amp; classItem.children.length&gt;0" href="javascript:void(0)" v-on:click="go2childrenTree(classItem)" class="next-link"></a></span></span>
+                </div>
+                <children_cont v-if="classItem.children &amp;&amp; classItem.children.length&gt;0" :childrenArr="classItem.children" :class="classItem.hide?&quot;hide&quot;:&quot;&quot;"></children_cont>
+              </li>
+            </ul>
           </li>
         </ul>
-      </li>
-    </ul>
-    <ul class="fixed_nav">
-      <li class="nav_item">A</li>
-      <li class="nav_item">B</li>
-      <li class="nav_item">C</li>
-      <li class="nav_item">D</li>
-      <li class="nav_item">E</li>
-      <li class="nav_item">F</li>
-      <li class="nav_item">G</li>
-    </ul>
-    <ul class="mgr_btns">
-      <li class="sel_btn">全选</li>
-      <li class="sel_btn">反选</li>
-      <li class="sel_btn red">清空</li>
-    </ul>
+        <ul class="fixed_nav">
+          <li v-for="classIndexItem in classArr" v-on:click="scroll2Tit(classIndexItem.name)" class="nav_item">{{classIndexItem.name}}</li>
+        </ul>
+        <ul class="mgr_btns">
+          <li v-on:click="selectAll()" class="sel_btn">全选</li>
+          <li v-on:click="selectNagative()" class="sel_btn">反选</li>
+          <li v-on:click="emptyAllSelect()" class="sel_btn red">清空</li>
+        </ul>
+      </div>
+    </div>
   </div>
   <script type="text/javascript" src="js/libs/fastclick.js"></script>
   <script type="text/javascript" src="js/libs/jquery-2.1.4.js"></script>

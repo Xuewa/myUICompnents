@@ -34,35 +34,33 @@ block content
               font 本页功能二
   div.header_masker
   //- content
-  div.tree_cont
-    div.search_cont
-      i.search_icon
-      input.search_input(placeholder='请输入产品目录名称...')
-    ul.treeIndex_list
-      li.treeIndex_item(v-for='classIndexItem in classArr')
-        div.treeIndex_tit {{classIndexItem.name}}
-        ul.treeIndex_content
-          li.treeContent_item(v-for='classItem in classIndexItem.classarr')
-            i.tree_icon
-            input(type='checkbox',hidden='true')
-            span.tree_content
-              span.tree_name {{classItem.name}}
-              span.tree_right
-                font.selected-text(v-if='classItem.checked') 全选中
-                font.selected-text(v-else='') 未选中
-                a.next-link
-    ul.fixed_nav
-      li.nav_item A
-      li.nav_item B
-      li.nav_item C
-      li.nav_item D
-      li.nav_item E
-      li.nav_item F
-      li.nav_item G
-    ul.mgr_btns
-      li.sel_btn 全选
-      li.sel_btn 反选
-      li.sel_btn.red 清空
+  div.content
+    div.tree_cont
+      div.tree_inner_cont
+        div.search_cont
+          i.search_icon
+          input.search_input(placeholder='请输入产品目录名称...')
+        ul.treeIndex_list
+          li.treeIndex_item(v-for='(classIndexItem,idx1) in classArr')
+            div.treeIndex_tit(:ref='classIndexItem.name') {{classIndexItem.name}}
+            ul.treeIndex_content
+              li.treeContent_item(v-for='(classItem,idx2) in classIndexItem.classarr')
+                div.treeContent_inner_item
+                  i.tree_icon(v-on:click='selectItem(classItem)',:class="classItem.children&&classItem.children.length>0?(allSelectedArr[idx1][idx2]?'all_ticked':''):(classItem.checked?'all_ticked':'')" )
+                  input(type='checkbox',hidden='true')
+                  span.tree_content
+                    span.tree_name {{classItem.name}}
+                    span.tree_right
+                      font.selected-text(v-if='allSelectedArr[idx1][idx2]') 全选中
+                      font.selected-text(v-else='') 未选中
+                      a.next-link(v-if='classItem.children && classItem.children.length>0',href='javascript:void(0)',v-on:click="go2childrenTree(classItem)")
+                children_cont(v-if='classItem.children && classItem.children.length>0',:childrenArr='classItem.children',:class='classItem.hide?"hide":""')
+        ul.fixed_nav
+          li.nav_item(v-for='classIndexItem in classArr',v-on:click='scroll2Tit(classIndexItem.name)') {{classIndexItem.name}}
+        ul.mgr_btns
+          li.sel_btn(v-on:click='selectAll()') 全选
+          li.sel_btn(v-on:click='selectNagative()') 反选
+          li.sel_btn.red(v-on:click='emptyAllSelect()') 清空
   
   
 

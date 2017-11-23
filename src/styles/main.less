@@ -780,8 +780,12 @@ h3.info-title{
 }
 
 // treeSelect
-.tree_cont{
-	
+.tree_inner_cont{
+	position: fixed;
+	top: 44px;
+	bottom:50px;
+	left: 0;right: 0;
+	overflow: auto;
 }
 .search_cont{
 	background-color: #fff;
@@ -813,10 +817,18 @@ h3.info-title{
 	line-height: 22px;
 	padding-left: 16px;
 }
+.childrenIndex_content{
+	padding-left: 30px;
+	&.hide{
+		display: none;
+	}
+}
 .treeContent_item{
 	background-color: #fff;
-	display: flex;
-	align-items:center;
+	.treeContent_inner_item{
+		align-items:center;
+		display: flex;
+	}
 	.tree_icon{
 		width: 22px;height: 22px;
 		display: inline-block;
@@ -825,6 +837,12 @@ h3.info-title{
 		background-size: 22px auto;
 		vertical-align: middle;
 		margin: 0 16px;
+		&.all_ticked{
+			background-image: url('../images/icons/selected.png');
+		}
+		&.part_ticked{
+			background-image: url('../images/icons/grey_select.png');
+		}
 	}
 
 	.tree_content{
