@@ -46,21 +46,22 @@ block content
             ul.treeIndex_content
               li.treeContent_item(v-for='(classItem,idx2) in classIndexItem.classarr')
                 div.treeContent_inner_item
-                  i.tree_icon(v-on:click='selectItem(classItem)',:class="classItem.children&&classItem.children.length>0?(allSelectedArr[idx1][idx2]?'all_ticked':''):(classItem.checked?'all_ticked':'')" )
+                  //- i.tree_icon(v-on:click='selectItem(classItem)',:class="!!classItem.children&&classItem.children.length>0?(allSelectedArr[idx1][idx2]?'all_ticked':''):(classItem.checked?'all_ticked':'')" )
+                  i.tree_icon(v-on:click='selectItem(classItem)',:class="classItem.checked?'all_ticked':''" )
                   input(type='checkbox',hidden='true')
                   span.tree_content
                     span.tree_name {{classItem.name}}
                     span.tree_right
                       font.selected-text(v-if='allSelectedArr[idx1][idx2]') 全选中
                       font.selected-text(v-else='') 未选中
-                      a.next-link(v-if='classItem.children && classItem.children.length>0',href='javascript:void(0)',v-on:click="go2childrenTree(classItem)")
+                      a.next-link(v-if='classItem.children && classItem.children.length>0',:class='classItem.hide?"":"down_arr"',href='javascript:void(0)',v-on:click="go2childrenTree(classItem)")
                 children_cont(v-if='classItem.children && classItem.children.length>0',:childrenArr='classItem.children',:class='classItem.hide?"hide":""')
         ul.fixed_nav
           li.nav_item(v-for='classIndexItem in classArr',v-on:click='scroll2Tit(classIndexItem.name)') {{classIndexItem.name}}
         ul.mgr_btns
           li.sel_btn(v-on:click='selectAll()') 全选
           li.sel_btn(v-on:click='selectNagative()') 反选
-          li.sel_btn.red(v-on:click='emptyAllSelect()') 清空
+          li.sel_btn.red(v-on:click='emptyAllSelect') 清空
   
   
 

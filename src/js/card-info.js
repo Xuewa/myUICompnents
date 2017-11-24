@@ -76,4 +76,8 @@
 	    }else{//单击
 	    }
 	});
+
+	$('.slide-btn-cont.del_btn').on('click',function(){
+		$(this).parent().remove();
+	})
 // })

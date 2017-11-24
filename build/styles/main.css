@@ -319,6 +319,8 @@ input{ line-height: 1;}
   color: #d2dbe2; font-size: 15px; font-family: 'PingFangSC-Regular', '微软雅黑';}
 [class^='weui-icon-']:before,[class*=' weui-icon-']:before{ margin-left: 0; margin-right: 0;}
 .weui-cell:before{ left: 54px;}
+.weui-input{ width: calc(88%);}
+textarea.weui-input{ width: calc(88%); word-break: break-all; height: auto;}
 .weui-cells_checkbox .weui-cell__hd{ padding-right: 16px;}
 .weui-cells_radio .weui-cell__ft{ margin-right: 16px; padding: 0; width: 22px; height: 22px; line-height: 22px; text-align: center; vertical-align: middle;}
 .weui-cells_checkbox .weui-icon-checked:before{ content: '\EA01'; color: #c9c9c9; font-size: 22px; display: block;}
@@ -369,6 +371,7 @@ header.nav-bar{ color: #fff; background-color: #51c75b; position: fixed; right: 
 .xblock-row{ padding-left: 16px;}
 .xblock-inner-row{ padding: 13px 16px 13px 0; font-size: 15px; line-height: 22px;}
 .xblock-inner-row:after{ position: absolute; top: 48px; display: inline-block; content: ''; height: 0.5px; left: 0; width: 100%; background-color: #eceeef;}
+.heightAuto .xblock-inner-row:after{ top: 73px;}
 .form-xblock .xblock-row:last-child .xblock-inner-row:after{ display: none;}
 .xblock-row:before{ display: none;}
 .xblock-row-err .xblock-inner-row:after{ display: none;}
@@ -564,6 +567,7 @@ h3.info-title:before{ content: ''; display: inline-block; position: absolute; ba
 .treeContent_item .tree_name{ font-family: PingFangSC-Regular; font-size: 15px; color: #131724; letter-spacing: 0; line-height: 48px; vertical-align: middle;}
 .treeContent_item .tree_right font{ vertical-align: middle; font-family: PingFangSC-Regular; font-size: 12px; color: #9ca5b5; letter-spacing: 0; line-height: 48px; display: inline-block;}
 .treeContent_item .tree_right .next-link{ display: inline-block; width: 22px; height: 22px; background-size: 22px auto; line-height: 48px; background-image: url('../images/icons/right_arr.png'); vertical-align: middle;}
+.treeContent_item .tree_right .next-link.down_arr{ -webkit-transform: rotate(90deg); transform: rotate(90deg);}
 .fixed_nav{ position: fixed; background-color: #fff; right: 0; width: 20px; top: 0; bottom: 0; padding-top: 100px; font-family: SFUIText-Medium; font-size: 11px; color: #131724; letter-spacing: 0;}
 .fixed_nav .nav_item{ text-align: center;}
 .mgr_btns{ position: fixed; bottom: 0; background-color: #fff; display: -ms-flexbox; display: flex; width: 100%; font-family: PingFangSC-Regular; font-size: 16px; color: #131724; letter-spacing: 0; line-height: 16px; box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);}

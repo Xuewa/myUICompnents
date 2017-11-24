@@ -82,10 +82,10 @@ $inputEle.bind('input propertychange', function() {
 });
 
 //-----不合法的输入框焦点重新获取
-var $errInputRow = $('.xblock-row-err input');
+var $errInputRow = $('.xblock-row-err .weui-input');
 $errInputRow.on('focus',function(){
   console.log('mousedown');
-  var $blockRowLi = $errInputRow.parents('li.xblock-row-err');
+  var $blockRowLi = $(this).parents('li.xblock-row-err');
   $blockRowLi.removeClass('xblock-row-err');
 });
 
@@ -194,5 +194,32 @@ $numAddBtn.on('click',function(){
   $numCont.text(++number);
 });
 
-
+//--------------------调用
+//-----滚动选择
+$("#tourist-select").picker({
+  title: "请选择出行人数",
+  cols: [
+    {
+      textAlign: 'center',
+      values: ['00 成人', '01 成人', '02 成人', '03 成人','04 成人','05 成人']
+    },
+    {
+      textAlign: 'center',
+      values: ['00 小孩', '01 小孩', '02 小孩', '03 小孩','04 小孩','05 小孩']
+    },
+    {
+      textAlign: 'center',
+      values: ['00 婴儿', '01 婴儿', '02 婴儿', '03 婴儿','04 婴儿','05 婴儿']
+    },
+  ],
+  onClose: function(p) {
+    // console.log(p.cols);
+    var cols = p.cols;
+    var values=[];
+    for (var i=0;i<=cols.length-1;i++) {
+      values.push(cols[i].displayValue);
+    }
+    $("#tourist-select").text(values.join(' / ')).addClass('xblock-selectVal-text');
+  }
+});
 })($);

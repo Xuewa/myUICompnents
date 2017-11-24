@@ -23,6 +23,14 @@ color:#D2DBE2;font-size: 15px;font-family: @PF-reg;
 //------重置weui
 [class^="weui-icon-"]:before, [class*=" weui-icon-"]:before {margin-left: 0;margin-right:0;}
 .weui-cell:before{left:54px;}
+.weui-input{
+	width: calc(100% - 12px);
+}
+textarea.weui-input{
+	width: calc(100% - 12px);
+	word-break:break-all;
+	height: auto;
+}
 .weui-cells_checkbox .weui-cell__hd {padding-right: 16px;}
 .weui-cells_radio .weui-cell__ft{margin-right:16px;padding:0;width:22px;height: 22px;line-height:22px;text-align: center;vertical-align: middle; }
 .weui-cells_checkbox .weui-icon-checked:before{content:'\EA01';color:#C9C9C9;font-size:22px;display: block;}
@@ -147,6 +155,7 @@ header.nav-bar{color: #fff;background-color:@theme-color;position: fixed;
 	// box-shadow: inset 0 -0.5px 0 0 #ECEEEF;
 	font-size: 15px;line-height: 22px;}
 .xblock-inner-row:after{position:absolute;top:48px;display:inline-block;content:'';height:0.5px;left:0;width:100%;background-color:#ECEEEF;}
+.heightAuto .xblock-inner-row:after{top:73px;}
 .form-xblock .xblock-row:last-child .xblock-inner-row:after{display:none;}
 .xblock-row:before{display: none;}
 //验证失败
@@ -882,6 +891,9 @@ h3.info-title{
 			line-height: 48px;
 			background-image: url('../images/icons/right_arr.png');
 			vertical-align: middle;
+			&.down_arr{
+				transform:rotate(90deg);
+			}
 		}
 	}
 }
