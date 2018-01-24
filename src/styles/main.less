@@ -31,6 +31,7 @@ textarea.weui-input{
 	word-break:break-all;
 	height: auto;
 }
+
 .weui-cells_checkbox .weui-cell__hd {padding-right: 16px;}
 .weui-cells_radio .weui-cell__ft{margin-right:16px;padding:0;width:22px;height: 22px;line-height:22px;text-align: center;vertical-align: middle; }
 .weui-cells_checkbox .weui-icon-checked:before{content:'\EA01';color:#C9C9C9;font-size:22px;display: block;}
@@ -110,7 +111,22 @@ header.nav-bar{color: #fff;background-color:@theme-color;position: fixed;
 .nav-right .nav-icon{position: absolute;right:24px;}
 .nav-right .nav-more{position: absolute;right: 0;}
 .icon_dots{width: 22px;height: 22px;}
-
+.index-list{
+	background-color: #fff;
+	padding-left: 10px;
+}
+.index-item{
+	border-bottom: 1px dotted #eee;
+}
+.index-list a{
+	color: #333;
+	line-height: 30px;
+	vertical-align: middle;
+}
+.index-list .index-cont{
+	color: #999;
+	padding-left: 20px;
+}
 .nav-more-list{position: relative;display: none;z-index: 2;top: 28px;}
 .dropdown_mask{position: fixed;top: 0;right: 0;bottom: 0;left: 0;
   background-color:rgba(0, 0, 0, 0.1);z-index: -2;display: none;}
@@ -211,6 +227,7 @@ header.nav-bar{color: #fff;background-color:@theme-color;position: fixed;
 .xblock-row a .tip-cont{display:none;padding: 16px;background-color:#131724;border-radius:4px;position:absolute;left:0;bottom:48px;right:16px;z-index:1; }
 .xblock-row a .tip-arrow{border-left: 4.5px solid transparent;border-right: 4.5px solid transparent;border-top: 4.2px solid #131724;position:absolute;right:7px;bottom:-4.2px; }
 .xblock-row a .tip-text{color:#fff;text-align: justify;  }
+.xblock-row .next_link{display: inline-block;width:100px;}
 .xblock-row .next_xbtn{&:extend(.xbtn);width: 22px;height: 22px;}
 .xblock-row .xbtn_close{display: none;}
 .xblock-row .close_xbtn{&:extend(.xbtn);width: 22px;height: 22px;}
@@ -239,7 +256,7 @@ header.nav-bar{color: #fff;background-color:@theme-color;position: fixed;
 
 // 按钮
 button.primary-btn{background-color: @theme-color;border:none;color:#fff;display:block;width: 100%;height:44px;margin:10px auto;vertical-align: middle;line-height: 44px;text-align: center;}
-button.primary-btn-l{&:extend(button.primary-btn);}
+button.primary-btn-l{&:extend(button.primary-btn);border-radius: 0;}
 button.primary-btn-m{&:extend(button.primary-btn);width:calc(~"100% - 64px");border-radius:4px;}
 button.secondary-btn{&:extend(button.primary-btn);width:calc(~"100% - 64px");border:1px solid @theme-color;border-radius:4px;color: @theme-color;background-color:inherit;}
 
@@ -257,6 +274,7 @@ button.secondary-btn{&:extend(button.primary-btn);width:calc(~"100% - 64px");bor
 .xblock-search-row-left{width: 120px;position:relative;}
 .xblock-search-row-left:after{display:inline-block;content:'';position:absolute;width:0.5px;height:48px;left:120px;top:-12px;background-color:#ECEEEF;}
 .search-row-label{color:#4678D4;font-family:@PF-reg;display:inline;vertical-align:top;}
+.xblock-search-row-left .next_link{display: inline-block;width: 95px;height: 22px;}
 .xblock-search-row-left .next_xbtn{right:8px;}
 .xblock-search-row-right{padding-left:16px;}
 .xblock-search-add-row .weui-label{color:#131724;font-family:@PF-reg;}
@@ -586,6 +604,9 @@ button.secondary-btn{&:extend(button.primary-btn);width:calc(~"100% - 64px");bor
 			}
 		}
 		&.st2{
+			.label{
+				padding: 3px 7px;
+			}
 			.green{
 				border: 1px solid @theme-color;
 				color:@theme-color;
@@ -620,16 +641,14 @@ button.secondary-btn{&:extend(button.primary-btn);width:calc(~"100% - 64px");bor
 }
 .operates{
 	display: flex;
-	border-top: 0.5px solid #eceeef;
-	&:first-child{
-		border-bottom: 0.5px solid #eceeef;
-	}
 }
 .operate{
-	width: 33.33%;
+	// width: 33.33%;
 	text-align: center;
 	flex:1;
 	background-color: #fff;
+	border-top: 0.5px solid #eceeef;
+
 	a{
 		padding:  14.5px 0;
 		display: block;

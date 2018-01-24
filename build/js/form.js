@@ -12,6 +12,7 @@
   var $xbtnTip = $('.xbtn_tip');
   var $xbtnTipCont = $('.xbtn_tip .tip-cont');
   $xbtnTip.on('click',function(e){
+    var $xbtnTipCont = $(this).find('.tip-cont');
   	$xbtnTipCont.toggle();
   	$(document).one("click", function(){
         $xbtnTipCont.hide();
@@ -45,40 +46,40 @@ $inputEle.bind('input propertychange', function() {
                         '<img class="close_xbtn" src="" width="22" height="22">'+
                     '</a>');
     //有图标但不是关闭按钮，换成关闭按钮
-    }else if(oldAClazz.indexOf('xbtn_close')<0){
+    }/*else if(oldAClazz.indexOf('xbtn_close')<0){
       $linkEle.removeClass().addClass('xbtn_close');
       $imgEle.removeClass().addClass('close_xbtn');
-    }
+    }*/
     $linkEle = $liEle.find('a.xbtn_close').show();
     $linkEle.off('click').on('click',function(){
       var $input = $(this).parent().find('input.weui-input');
       $input.val('');
-      if ($liEle.attr('initXbtn')==='tip'){
-        $linkEle.removeClass().addClass('xbtn_tip');
-        $imgEle.removeClass().addClass('ques_xbtn');
-        var $xbtnTip = $('.xbtn_tip');
-        var $xbtnTipCont = $('.xbtn_tip .tip-cont');
-        $xbtnTip.off('click').on('click',function(){
-          $xbtnTipCont.toggle();
-        });
-      }else{
-      	$linkEle.hide();
-      }
+      // if ($liEle.attr('initXbtn')==='tip'){
+      //   $linkEle.removeClass().addClass('xbtn_tip');
+      //   $imgEle.removeClass().addClass('ques_xbtn');
+      //   var $xbtnTip = $('.xbtn_tip');
+      //   $xbtnTip.off('click').on('click',function(){
+      //     var $xbtnTipCont = $(this).find('.tip-cont');
+      //     $xbtnTipCont.toggle();
+      //   });
+      // }else{
+      // 	$linkEle.hide();
+      // }
     });
-  }else{
+  }/*else{
   	// console.log($liEle.attr('initXbtn'));
   	if ($liEle.attr('initXbtn')==='tip'){
         $linkEle.removeClass().addClass('xbtn_tip');
         $imgEle.removeClass().addClass('ques_xbtn');
         var $xbtnTip = $('.xbtn_tip');
-        var $xbtnTipCont = $('.xbtn_tip .tip-cont');
         $xbtnTip.off('click').on('click',function(){
+          var $xbtnTipCont = $(this).find('.tip-cont');
           $xbtnTipCont.toggle();
         });
       }else{
       	$linkEle.hide();
       }
-  }
+  }*/
 });
 
 //-----不合法的输入框焦点重新获取

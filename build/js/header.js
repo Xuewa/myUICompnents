@@ -5,7 +5,7 @@ FastClick.attach(document.body);
 
 //-----关于header的动效
   //---关于header的返回动效
-  var $backLink = $('#back-link');
+  var $backLink = $('#back-lin');
   $backLink.on('click',function(e){
   	// if(typeof(beforeBack)!=='undefined') beforeBack();
   	window.history.go(-1);

@@ -5,23 +5,23 @@
 	var areaX = 0,areaY = 0;
 	$(".slide-info-item").on("touchstart", function(e) {
 	    // 判断默认行为是否可以被禁用
-	    if (e.cancelable) {
-	        // 判断默认行为是否已经被禁用
-	        if (!e.defaultPrevented) {
-	            e.preventDefault();
-	        }
-	    }   
+	    // if (e.cancelable) {
+	    //     // 判断默认行为是否已经被禁用
+	    //     if (!e.defaultPrevented) {
+	    //         e.preventDefault();
+	    //     }
+	    // }   
 	    startX = e.originalEvent.changedTouches[0].pageX,
 	    startY = e.originalEvent.changedTouches[0].pageY;
 	});
 	$(".slide-info-item").on("touchend", function(e) {
 	    // 判断默认行为是否可以被禁用
-	    if (e.cancelable) {
-	        // 判断默认行为是否已经被禁用
-	        if (!e.defaultPrevented) {
-	            e.preventDefault();
-	        }
-	    }               
+	    // if (e.cancelable) {
+	    //     // 判断默认行为是否已经被禁用
+	    //     if (!e.defaultPrevented) {
+	    //         e.preventDefault();
+	    //     }
+	    // }               
 	    moveEndX = e.originalEvent.changedTouches[0].pageX,
 	    moveEndY = e.originalEvent.changedTouches[0].pageY,
 	    areaX = moveEndX - startX,
@@ -32,9 +32,6 @@
 	        // console.log(moveEndX+' - '+startX);
 	    }else if ( areaX > 100 ) {//右滑
 	        $(this).animate({'left':'0px'});  
-	    }else if ( areaY > 0) {//下滑
-	    }else if ( areaY < 0 ) {//上滑  
-	    }else{//单击
 	    }
 	});
 
@@ -44,23 +41,23 @@
 	var areaX = 0,areaY = 0;
 	$(".slide-info2-item").on("touchstart", function(e) {
 	    // 判断默认行为是否可以被禁用
-	    if (e.cancelable) {
-	        // 判断默认行为是否已经被禁用
-	        if (!e.defaultPrevented) {
-	            e.preventDefault();
-	        }
-	    }   
+	    // if (e.cancelable) {
+	    //     // 判断默认行为是否已经被禁用
+	    //     if (!e.defaultPrevented) {
+	    //         e.preventDefault();
+	    //     }
+	    // }   
 	    startX = e.originalEvent.changedTouches[0].pageX,
 	    startY = e.originalEvent.changedTouches[0].pageY;
 	});
 	$(".slide-info2-item").on("touchend", function(e) {
 	    // 判断默认行为是否可以被禁用
-	    if (e.cancelable) {
-	        // 判断默认行为是否已经被禁用
-	        if (!e.defaultPrevented) {
-	            e.preventDefault();
-	        }
-	    }               
+	    // if (e.cancelable) {
+	    //     // 判断默认行为是否已经被禁用
+	    //     if (!e.defaultPrevented) {
+	    //         e.preventDefault();
+	    //     }
+	    // }               
 	    moveEndX = e.originalEvent.changedTouches[0].pageX,
 	    moveEndY = e.originalEvent.changedTouches[0].pageY,
 	    areaX = moveEndX - startX,
@@ -71,9 +68,6 @@
 	        // console.log(moveEndX+' - '+startX);
 	    }else if ( areaX > 100 ) {//右滑
 	        $(this).animate({'left':'0px'});  
-	    }else if ( areaY > 0) {//下滑
-	    }else if ( areaY < 0 ) {//上滑  
-	    }else{//单击
 	    }
 	});
 

@@ -45,13 +45,19 @@ $('.xblock-define-search .num-decrease').on('click',function removeSearchRow(){
   $rowEle.remove();
 });
 
+var $linkRowEle = $('.xblock-search-row-left .next_link');
+$linkRowEle.on('click',function(){
+  var linkUrl = $(this).attr('data-link');
+  window.location.href = linkUrl;
+});
+
 //-----添加搜索条件
 $('.xblock-search-add-row .add-search').on('click',function(){
   var $searchContainer = $(this).parents().find('.xblock-content-list');
   var $newLiStr = '<li class="xblock-row">'+
             '<div class="xblock-inner-row weui-cell">'+
               '<div class="xblock-search-row-left weui-cell__hd"><span class="num-decrease icon-decrease_circle"></span>'+
-                '<label class="weui-label search-row-label"></label><a href="javascript:void(0);" class="next_xbtn"><img src="images/icons/right_arr.png" width="22" height="22" class="right_xbtn"></a>'+
+                '<span data-link="form-single-select-search.html" class="next_link"><label class="weui-label search-row-label"></label><a href="javascript:void(0);" class="next_xbtn"><img src="images/icons/right_arr.png" width="22" height="22" class="right_xbtn"></a></span>'+
               '</div>'+
               '<div class="xblock-search-row-right weui-cell__bd">'+
                 '<input  class="weui-input">'+
@@ -62,6 +68,10 @@ $('.xblock-search-add-row .add-search').on('click',function(){
   $('.xblock-define-search .num-decrease').on('click',function removeSearchRow(){
     var $rowEle = $(this).parents('.xblock-row');
     $rowEle.remove();
+  });
+  $('.xblock-search-row-left .next_link').on('click',function(){
+    var linkUrl = $(this).attr('data-link');
+    window.location.href = linkUrl;
   });
 });
 
@@ -89,8 +99,8 @@ $('.clear-history').on('click',function(){
 var dateRange1 = new pickerDateRange('datePicker', {
 	stopToday : false,
 	isTodayValid : true,
-	startDate: '2017-09-05',
-	endDate: '2017-09-07',
+	startDate: '2018-01-01',
+	endDate: '2018-09-07',
 	needCompare : false,
 	defaultText : ' 至 ',
 	autoSubmit : false,
@@ -98,6 +108,11 @@ var dateRange1 = new pickerDateRange('datePicker', {
 	theme : 'ta',
 	// shortOpr:true
 	// magicSelect:true
+	//disCertainDate: [1, 3],
+	//shortOpr: true,
+	//isSingleDay : true,
+	//specifyCertainFullDate: true,
+	//certainFullDate: [[2018,1,1],[2018,1,2]]
 });
 
 })($);

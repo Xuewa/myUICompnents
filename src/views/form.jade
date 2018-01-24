@@ -1,0 +1,176 @@
+extends layout
+
+block content
+  header.nav-bar
+    div.nav-left 
+      a#back-lin.back_xbtn
+        img.icon_back(src='images/icons/left_arr.png',alt='',width='10',height='18')
+        font.back-font 返回
+    h1.nav-title 表单填写
+    div.nav-right#dropdown
+      a.nav-icon(href='#',style='margin-right:12px')
+        img.icon_first(src='images/icons/icon.png',alt='',width='22',height='22')
+      a.nav-more(href='javascript:void(0);')
+        img.icon_dots(src='images/icons/dots.png',alt='',width='22',height='22')
+      div.dropdown_mask
+      div.nav-more-list
+        span.arrow
+        ul.nav-item-list
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img(src='images/icons/add_cir.png',width='20',height='20')
+              font 本页功能一
+          li.nav-item
+            a.nav-item-link(href='#')
+              img.nav-link-img(src='images/icons/clock.png',width='20',height='20')
+              font 本页功能二
+  div.header_masker
+
+  div.main
+    div.page-tip
+      p 针对该页面重要的提示信息
+      a.close_xbtn
+        img.xbtn_img(width='22',height='22',src='images/icons/close_grey.png')
+
+    div.xblock.form-xblock
+      div.xblock-title-row
+        h2.xblock-title 选项组标题
+      ul.xblock-content-list
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 输入
+            div.xblock-row-right.weui-cell__bd
+              input.weui-input(type="number",pattern="[0-9]*",placeholder="请输入数字(必填)...")
+            a.xbtn_close(href='javascript:void(0);')
+              img.close_xbtn(src='images/icons/close_cir.png',width='22',height='22')
+        li.xblock-row.xblock-row-err(data-initXbtn='tip')
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 输入(tip)
+            div.xblock-row-right.weui-cell__bd
+              input.weui-input(type="number",pattern="[0-9]*",placeholder="请输入数字(必填)...")
+            a.xbtn_tip(href='javascript:void(0);')
+              img.ques_xbtn(src='images/icons/ques.png',width='22',height='22')
+              div.tip-cont
+                span.tip-arrow
+                p.tip-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facilis accusamus maiores esse earum? Possimus vel natus ut esse illum tempore, quae iusto atque! Odio saepe, voluptatem reiciendis qui ut?
+        li.xblock-row.xblock-row-err.heightAuto(data-initXbtn='tip')
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 输入(tip)
+            div.xblock-row-right.weui-cell__bd
+              textarea.weui-input(type="number",pattern="[0-9]*",placeholder="请输入数字(必填)...",style="resize:none" )
+            a.xbtn_tip(href='javascript:void(0);')
+              img.ques_xbtn(src='images/icons/ques.png',width='22',height='22')
+              div.tip-cont
+                span.tip-arrow
+                p.tip-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facilis accusamus maiores esse earum? Possimus vel natus ut esse illum tempore, quae iusto atque! Odio saepe, voluptatem reiciendis qui ut?
+        li.xblock-row.xblock-link-row(data-link='form-mutiple-select.html')
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 多选
+            div.xblock-row-right.weui-cell__bd
+              font.xblock-row-placeholder(name='checkbox1',data-type='checkValsText',data-tip='可选择多个选项') 可选择多个选项
+            a.xbtn_link(href='javascript:void(0);')
+              img.next_xbtn(src='images/icons/right_arr.png',width='22',height='22')
+        li.xblock-row.xblock-link-row(data-link='form-single-select.html')
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 单选
+            div.xblock-row-right.weui-cell__bd
+              font.xblock-row-placeholder(name='radio1',data-type='radioValText',data-tip='请选择一个选项') 请选择一个选项
+            a.xbtn_link(href='javascript:void(0);')
+              img.next_xbtn(src='images/icons/right_arr.png',width='22',height='22')
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 出行人数
+            div.xblock-row-right.weui-cell__bd
+              font#tourist-select.xblock-row-placeholder(name='select1',data-type='selectValText',data-tip='请选择出行人数') 请选择出行人数
+        li.xblock-row.xblock-quickSelect-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 快速单选
+            div.xblock-row-right.weui-cell__bd
+              ul.quick-selects.clearfix
+                li.quick-select-item.selected-item
+                  font 选项1
+                li.quick-select-item 
+                  font 选项2
+                li.quick-select-item
+                  font 选项3
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 数量微调
+            div.xblock-row-right.weui-cell__bd
+              div.num-control
+                span.num-decrease.icon-decrease_circle
+                span.num-count 1
+                span.num-add.icon-add_circle    
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 状态显示
+            div.xblock-row-right.weui-cell__bd
+            a.xbtn_link(href='#') 
+              font.status_text 状态
+              img.next_xbtn(src='images/icons/right_arr.png',width='22',height='22')
+
+    div.xblock.form-xblock
+      div.xblock-title-row
+        h2.xblock-title 信息展示(当前页面右对齐)
+      ul.xblock-content-list
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 标签名称
+            div.xblock-row-right.weui-cell__bd.xblock-info-right
+              p.xblock-right-infoText 内容
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 链接文字
+            div.xblock-row-right.weui-cell__bd.xblock-info-right
+              a.xblock-right-linkText(href='#') 13423458904
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 新的消息
+            div.xblock-row-right.weui-cell__bd
+              a.xbtn_link(href='#')
+                span.red_point
+                img.next_xbtn(src='images/icons/right_arr.png',width='22',height='22')
+
+    div.xblock.form-xblock
+      div.xblock-title-row
+        h2.xblock-title 信息展示(当前页面左对齐)
+      ul.xblock-content-list
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 标签名称
+            div.xblock-row-right.weui-cell__bd.xblock-info-left
+              p.xblock-right-infoText 内容
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 链接文字
+            div.xblock-row-right.weui-cell__bd.xblock-info-left
+              a.xblock-right-linkText(href='#') 13423458904
+        li.xblock-row
+          div.xblock-inner-row.weui-cell
+            div.xblock-row-left.weui-cell__hd
+              label.weui-label 多行文本
+            div.xblock-row-right.weui-cell__bd.xblock-info-left
+              p.xblock-right-infoText  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non esse nobis libero natus atque perferendis, dolore, laudantium fugiat delectus ipsa dolor, amet a. Maiores, consectetur odit ut ipsa, ducimus sunt.
+
+    button.primary-btn-l 置顶按钮
+    button.primary-btn-m 推荐操作
+    button.secondary-btn 辅助操作
+    button.secondary-btn.toast-btn 提示操作
+
+
+append script
+  script(type='text/javascript',src="js/form.js")

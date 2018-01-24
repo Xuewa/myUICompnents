@@ -76,7 +76,9 @@
 		magicSelect : false, //用户自定义选择年、月，与{theme:ta}配合使用。
 		autoCommit : false, //加载后立马自动提交
 		autoSubmit : false, //没有确定，取消按钮，直接提交 
-		replaceBtn : 'btn_compare'
+		replaceBtn : 'btn_compare',
+		specifyCertainFullDate: false,
+		certainFullDate: []
     };
     //将对象赋给__method变量
     var __method = this;
@@ -317,26 +319,16 @@
     });
     // 为输入框添加click事件
     $('#' + this.inputId).bind('click', function() {
-        __method.init();
+        __method.init(false,true);
         __method.show(false, __method);
         return false;
     });
 	$('#' + this.mOpts.inputTrigger).bind('click', function() {
-        __method.init();
+        __method.init(false,true);
         __method.show(false, __method);
         return false;
     });
-	$('#' + this.mOpts.compareTrigger).bind('click', function() {
-        __method.init(true);
-        __method.show(true, __method);
-        return false;
-    });
-	   // 为输入框添加click事件
-    $('#' + this.inputCompareId).bind('click', function() {
-        __method.init(true);
-        __method.show(true, __method);
-        return false;
-    });
+	
 	
 	//判断是否是实时数据,如果是将时间默认填充进去 added by johnnyzheng 12-06
 	if(this.mOpts.singleCompare){
@@ -418,7 +410,7 @@
     });
 
     // 初始化开始
-    this.init();
+    this.init(false,false);
     // 关闭日期选择框，并把结果反显到输入框
     this.close(1);
 	if(this.mOpts.replaceBtn && $('#'+this.mOpts.replaceBtn).length > 0){
@@ -462,7 +454,7 @@
  * @description 日期选择器的初始化方法，对象原型扩展
  * @param {Boolean} isCompare 标识当前初始化选择面板是否是对比日期
  */
-pickerDateRange.prototype.init = function(isCompare) {
+pickerDateRange.prototype.init = function(isCompare, isStart) {
     var __method = this;
     var minDate, maxDate;
 	var isNeedCompare = typeof(isCompare) != 'undefined'? isCompare && $("#" + __method.compareCheckboxId).attr('checked') : $("#" + __method.compareCheckboxId).attr('checked');
@@ -472,7 +464,7 @@ pickerDateRange.prototype.init = function(isCompare) {
     if ($calendarTableEle.length>0) $("#" + this.dateListId).empty();
 	// console.log(this.dateListId);
     // 如果开始日期为空，则取当天的日期为开始日期
-    var endDate = '' == this.mOpts.endDate ? (new Date()) : this.str2date(this.mOpts.endDate);
+    var endDate = isStart? this.str2date(this.mOpts.startDate) :'' == this.mOpts.endDate ? (new Date()) : this.str2date(this.mOpts.endDate);
     // 日历结束时间
     this.calendar_endDate = new Date(endDate.getFullYear(), endDate.getMonth() + 1, 0);
 
@@ -1047,7 +1039,7 @@ pickerDateRange.prototype.show = function(isCompare, __method) {
     $("#" + this.calendarId).css({'left': left  + 'px','right':0});
     //$("#" + this.calendarId).css('top', pos.top + (offsetHeight ? offsetHeight- 1 : (__method.mOpts.theme=='ta'?35:22)) + 'px');
     // $("#" + this.calendarId).css('top', pos.top + (__method.mOpts.theme=='ta'?85:22) + 'px');
-    $("#" + this.calendarId).css('bottom', 10 + 'px');
+    $("#" + this.calendarId).css('bottom', 0 + 'px');
 	// $("#" + this.calendarId).css('padding', pos.top + (__method.mOpts.theme=='ta'?85:22) + 'px');
 	//第一次显示的时候，一定要初始化输入框
 	isCompare ? this.changeInput(this.startCompareDateId) : this.changeInput(this.startDateId);
@@ -1341,6 +1333,25 @@ pickerDateRange.prototype.fillDate = function(year, month, index) {
                 }
 
             }
+			//指定详细的可选日期
+			//debugger
+			if(this.mOpts.specifyCertainFullDate && this.mOpts.certainFullDate.length > 0 ){
+				deviation = '4';
+				tdClass = this.mOpts.theme + '_' + this.mOpts.disableGray;
+				for(var p in this.mOpts.certainFullDate){
+					var fullDatesArr =  this.mOpts.certainFullDate[p]
+					var dTpl = new Date(fullDatesArr[0],fullDatesArr[1]-1,fullDatesArr[2])
+					console.log(fullDatesArr)
+					//可选
+					if (d.getTime() === dTpl.getTime()) {
+						tdClass= '';
+						deviation = '0';
+						break;
+					}
+				}
+			}
+			
+			
         }
 
         // 如果是周日
